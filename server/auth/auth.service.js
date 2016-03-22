@@ -7,14 +7,40 @@ import expressJwt from 'express-jwt';
 import compose from 'composable-middleware';
 import User from '../api/user/user.model';
 
+import http from 'http';
 import util from 'util';
 
 var validateJwt = expressJwt({
   secret: config.secrets.session
 });
 
+function updateWhitelist(host, data) {
+  var options = {
+    host: host,
+    port: config.whitelist_port,
+    path: '/whitelist.txt',
+   method: 'PUT'
+  };
+
+  var req = http.request(options, function(res) {
+    console.log('STATUS: ' + res.statusCode);
+    console.log('HEADERS: ' + JSON.stringify(res.headers));
+    res.setEncoding('utf8');
+    res.on('data', function (chunk) {
+      console.log('BODY: ' + chunk);
+    });
+  });
+
+  req.on('error', function(e) {
+    console.log('problem with request: ' + e.message);
+  });
+
+  req.write(data);
+  req.end();
+}
+
 /**
- * Attaches the user object to the request if authenticated
+ * Updates whitelists and attaches the user object to the request if authenticated
  * Otherwise returns 403
  */
 export function isAuthenticated() {
@@ -54,16 +80,8 @@ export function isAuthenticated() {
               });
               var data = whitelist.join("\n");
               console.log("Current whitelist:\n" + data);
-              var request = require('request');
-              request.put(
-                  'http://base.flsw.io/whitelist.txt',
-                  data,
-                  function (error, response, body) {
-                      if (!error && response.statusCode === 200) {
-                          console.log(body)
-                      }
-                  }
-              );
+              updateWhitelist('base.flsw.io', data);
+
             });
           });
           next();
