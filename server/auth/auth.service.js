@@ -19,7 +19,11 @@ function updateWhitelist(host, data) {
     host: host,
     port: config.whitelist_port,
     path: '/whitelist.txt',
-   method: 'PUT'
+    method: 'PUT',
+    headers: {
+          'Content-Type': 'text/plain',
+          'Content-Length': data.length
+      }
   };
 
   var req = http.request(options, function(res) {
