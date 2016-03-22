@@ -5,6 +5,8 @@ import passport from 'passport';
 import config from '../../config/environment';
 import jwt from 'jsonwebtoken';
 
+import util from 'util';
+
 function validationError(res, statusCode) {
   statusCode = statusCode || 422;
   return function(err) {
@@ -24,8 +26,7 @@ function handleError(res, statusCode) {
  * restriction: 'admin'
  */
 export function index(req, res) {
-  return User.find({}, '-salt -password').exec()
-    .then(users => {
+  return User.find({}, '-salt -password').exec().then( users => {
       res.status(200).json(users);
     })
     .catch(handleError(res));

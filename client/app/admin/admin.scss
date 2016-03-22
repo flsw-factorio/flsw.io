@@ -10,6 +10,15 @@
 
 		.user-info {
 			flex-grow: 1;
+
+			.activity-detail th {
+			  text-align: center;
+			  padding-left: 2em;
+      }
+ 			.activity-detail td {
+			  text-align: left;
+			  padding-left: 2em;
+      }
 		}
 		.trash {
 			display: flex;
@@ -18,3 +27,4 @@
 		}
 	}
 }
+

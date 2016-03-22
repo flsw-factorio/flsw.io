@@ -5,6 +5,12 @@ import mongoose from 'mongoose';
 mongoose.Promise = require('bluebird');
 import {Schema} from 'mongoose';
 
+var IPActivitySchema = new Schema({
+    ip: String,
+    target: String,
+    date: Date
+});
+
 var UserSchema = new Schema({
   name: String,
   email: {
@@ -15,9 +21,14 @@ var UserSchema = new Schema({
     type: String,
     default: 'user'
   },
+  ban: {
+    type: Boolean,
+    default: false
+  },
   password: String,
   provider: String,
-  salt: String
+  salt: String,
+  activity: [IPActivitySchema]
 });
 
 /**

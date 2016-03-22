@@ -7,6 +7,8 @@ import expressJwt from 'express-jwt';
 import compose from 'composable-middleware';
 import User from '../api/user/user.model';
 
+import util from 'util';
+
 var validateJwt = expressJwt({
   secret: config.secrets.session
 });
@@ -32,7 +34,38 @@ export function isAuthenticated() {
           if (!user) {
             return res.status(401).end();
           }
+          console.log("Authenticated user: " + util.inspect(user));
           req.user = user;
+          user.activity.push({
+            target: req.get('host'),
+            ip: req.connection.remoteAddress,
+            date: Date.now()
+          });
+          user.save().then(function() {
+            User.find({}).exec().then(function(users) {
+              var whitelist = []
+              users.forEach(function(user) {
+                user.activity.forEach(function(activity) {
+                  if (whitelist.indexOf(activity.ip) < 0) {
+                    whitelist.push(activity.ip);
+                  }
+
+                });
+              });
+              var data = whitelist.join("\n");
+              console.log("Current whitelist:\n" + data);
+              var request = require('request');
+              request.put(
+                  'http://base.flsw.io/whitelist.txt',
+                  data,
+                  function (error, response, body) {
+                      if (!error && response.statusCode === 200) {
+                          console.log(body)
+                      }
+                  }
+              );
+            });
+          });
           next();
         })
         .catch(err => next(err));

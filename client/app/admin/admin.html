@@ -3,10 +3,20 @@
   <ul class="list-group user-list">
     <li class="list-group-item" ng-repeat="user in admin.users">
 	    <div class="user-info">
+	    <p>
 	        <strong>{{user.name}}</strong><br>
 	        <span class="text-muted">{{user.email}}</span>
+	        <table class="activity-detail" >
+	        <caption>Activity</caption>
+	          <tr><th>Location</th><th>IP</th><th>Date</th></span></tr>
+	          <tr ng-repeat="act in user.activity">
+	            <td>{{act.target}}</td><td>{{act.ip}}</td><td>{{act.date}}</td></span>
+	          </tr>
+	        </table>
+	     </p>
 	    </div>
-        <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
+        <a ng-click="admin.ban(user)" class="trash"><span>ban(not working)</span></a>
+  	    <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
     </li>
   </ul>
 </div>
