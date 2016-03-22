@@ -38,7 +38,7 @@ export function isAuthenticated() {
           req.user = user;
           user.activity.push({
             target: req.get('host'),
-            ip: req.connection.remoteAddress,
+            ip: req.get('X-Real-IP'),
             date: Date.now()
           });
           user.save().then(function() {
