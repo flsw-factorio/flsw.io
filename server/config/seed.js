@@ -45,7 +45,8 @@ User.find({}).remove()
       provider: 'local',
       name: 'Test User',
       email: 'test@example.com',
-      password: 'test'
+      password: 'test',
+      activity: [ {ip: '3.2.1.1', target: 'some.place.io', date: 330420 } ]
     }, {
       provider: 'local',
       role: 'admin',

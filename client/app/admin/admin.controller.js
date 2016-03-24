@@ -6,6 +6,7 @@ class AdminController {
   constructor(User) {
     // Use the User $resource to fetch all users
     this.users = User.query();
+    this.User = User;
   }
 
   delete(user) {
@@ -14,12 +15,16 @@ class AdminController {
   }
 
   ban(user) {
-    this.$http.put('/ban/' + user._id +'/' + true);
-  }
+    user.banned = true;
+    console.log('banning %o', user);
+    user.$save();
+    }
 
   unban(user) {
-    this.$http.put('/ban/' + user._id +'/' + false);
-  }
+   user.banned = false;
+    console.log('unbanning %o', user);
+    user.$save();
+    }
 }
 
 angular.module('flswIoApp.admin')

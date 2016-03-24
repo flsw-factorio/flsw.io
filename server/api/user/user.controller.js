@@ -4,6 +4,7 @@ import User from './user.model';
 import passport from 'passport';
 import config from '../../config/environment';
 import jwt from 'jsonwebtoken';
+import recompileLists from '../../auth/auth.service';
 
 import util from 'util';
 
@@ -16,6 +17,7 @@ function validationError(res, statusCode) {
 
 function handleError(res, statusCode) {
   statusCode = statusCode || 500;
+  console.log("Error: %s", statusCode);
   return function(err) {
     res.status(statusCode).send(err);
   };
@@ -78,16 +80,17 @@ export function destroy(req, res) {
 }
 
 /**
- * Bans a user
+ * Ban/unban a user
  * restriction: 'admin'
  */
-export function setBanStatus(req, res) {
+export function save(req, res, next) {
   return User.findById(req.params.id).exec()
-    .then(function(user) {
-     user.banned = req.params.banned;
-      return user.save()
+    .then(user => {
+      user.banned = req.body.banned;
+      user.save()
       .then(() => {
         res.status(204).end();
+        recompileLists();
      })
      .catch(handleError(res));
   });

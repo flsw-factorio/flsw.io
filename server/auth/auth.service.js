@@ -14,14 +14,14 @@ var validateJwt = expressJwt({
   secret: config.secrets.session
 });
 
-function updateWhitelist(host, data) {
+function updateServerlists(host, data) {
   var options = {
     host: host,
     port: config.whitelist_port,
-    path: '/whitelist.txt',
+    path: '/list',
     method: 'PUT',
     headers: {
-          'Content-Type': 'text/plain',
+          'Content-Type': 'application/json',
           'Content-Length': data.length
       }
   };
@@ -43,8 +43,29 @@ function updateWhitelist(host, data) {
   req.end();
 }
 
+//TODO make it a promise... blah blah
+export function recompileLists() {
+  console.log("Recompiling access lists");
+  User.find({}).exec().then(users => {
+    var whitelist = [];
+    var blacklist = [];
+    users.forEach(function(user) {
+      if (user.banned) {
+        blacklist = blacklist.concat(user.summary.hosts);
+      } else {
+        whitelist = whitelist.concat(user.summary.hosts);
+      }
+    });
+    var data = JSON.stringify({ 'white': whitelist, 'black' : blacklist })
+    console.log("Updating lists: " + data);
+    config.game_servers.forEach(function(host) {
+      updateServerlists(host, data);
+    });
+  }).catch(function(err) {console.log(err)});
+}
+
 /**
- * Updates whitelists and attaches the user object to the request if authenticated
+ * Attaches the user object to the request if authenticated
  * Otherwise returns 403
  */
 export function isAuthenticated() {
@@ -66,30 +87,15 @@ export function isAuthenticated() {
           }
           console.log("Authenticated user: " + util.inspect(user));
           req.user = user;
+          var real_ip = req.get('X-Real-IP') || req.connection.remoteAddress;
           user.activity.push({
             target: req.get('host'),
-            ip: req.get('X-Real-IP'),
+            ip: real_ip,
             date: Date.now()
           });
-          user.save().then(function() {
-            User.find({}).exec().then(function(users) {
-              var whitelist = []
-              users.forEach(function(user) {
-                user.activity.forEach(function(activity) {
-                  if (whitelist.indexOf(activity.ip) < 0) {
-                    whitelist.push(activity.ip);
-                  }
-
-                });
-              });
-              var data = whitelist.join("\n");
-              console.log("Current whitelist:\n" + data);
-              config.game_servers.forEach(function(host) {
-                updateWhitelist(host, data);
-              });
-            });
-          });
-          next();
+          user.save()
+          .then(function() { recompileLists(); next(); })
+          .catch(err => next(err));
         })
         .catch(err => next(err));
     });

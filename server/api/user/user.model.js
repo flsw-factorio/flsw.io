@@ -29,6 +29,10 @@ var UserSchema = new Schema({
   provider: String,
   salt: String,
   activity: [IPActivitySchema]
+},
+{
+    toObject: { virtuals: true },
+    toJSON: { virtuals: true }
 });
 
 /**
@@ -53,6 +57,45 @@ UserSchema
       '_id': this._id,
       'role': this.role
     };
+  });
+
+// List of known IP addresses and targets
+UserSchema
+  .virtual('summary')
+  .get(function() {
+  var hosts = [];
+  var locations = [];
+   this.activity.forEach(function(activity) {
+        if (hosts.indexOf(activity.ip) < 0) {
+            hosts.push(activity.ip);
+        }
+        if (locations.indexOf(activity.target) < 0) {
+            locations.push(activity.target);
+        }
+    });
+    return { 'hosts': hosts, 'locations': locations};
+  });
+
+// Most recent activity per-source-ip
+UserSchema
+  .virtual('recent')
+  .get(function() {
+   var bucket = {};
+   this.activity.forEach(function(activity) {
+        if (!bucket[activity.ip]) {
+            bucket[activity.ip] = activity;
+        }
+        else if (bucket[activity.ip].date < activity.date) {
+             bucket[activity.ip] = activity;
+        }
+    });
+    var recent = [];
+    for (var key in bucket) {
+      if (bucket.hasOwnProperty(key)) {
+        recent.push(bucket[key]);
+      }
+    }
+    return recent;
   });
 
 /**

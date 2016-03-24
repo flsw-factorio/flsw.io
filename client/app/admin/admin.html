@@ -7,18 +7,18 @@
 	        <strong>{{user.name}}</strong><br>
 	        <span class="text-muted">{{user.email}}</span>
 	        <table class="activity-detail" >
-	        <caption>Activity</caption>
-	          <tr><th>Location</th><th>IP</th><th>Date</th></span></tr>
-	          <tr ng-repeat="act in user.activity">
-	            <td>{{act.target}}</td><td>{{act.ip}}</td><td>{{act.date}}</td></span>
+	        <caption>Recent Activity</caption>
+	          <tr><th>Target</th><th>Source IP</th><th>Date</th></tr>
+	          <tr ng-repeat="act in user.recent">
+	            <td>{{act.target}}</td><td>{{act.ip}}</td><td>{{act.date}}</td>
 	          </tr>
 	        </table>
 	     </p>
 	    </div>
-	      <span ng-if="user.banned">
-        <a ng-click="admin.unban(user)" ><span >UnBan!</span></a>
+	      <span ng-show="user.banned">
+        <a ng-click="admin.unban(user)"><span >UnBan!</span></a>
         </span>
-	      <span ng-if="!user.banned">
+	      <span ng-show="!user.banned">
         <a ng-click="admin.ban(user)" ><span >Ban!</span></a>
         </span>
   	    <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
