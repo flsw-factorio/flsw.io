@@ -1,0 +1,26 @@
+{
+  "name": "flsw.io",
+  "homepage": "https://github.com/flsw-factorio/flsw.io",
+  "authors": [
+    "caydinc@gmail.com"
+  ],
+  "description": "flsw.io front end",
+  "main": "client/index.html",
+  "moduleType": [],
+  "keywords": [
+    "factorio"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}
