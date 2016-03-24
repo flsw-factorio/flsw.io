@@ -21,7 +21,7 @@ var UserSchema = new Schema({
     type: String,
     default: 'user'
   },
-  ban: {
+  banned: {
     type: Boolean,
     default: false
   },

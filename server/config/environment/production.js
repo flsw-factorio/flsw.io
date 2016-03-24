@@ -13,6 +13,16 @@ module.exports = {
           process.env.PORT ||
           8080,
 
+  // Whitelist parameters
+  whitelist_port: process.env.WHITELIST_PORT,
+
+  // Game servers
+  game_servers: [
+    'base.flsw.io',
+    'pve.flsw.io',
+    'pvp.flsw.io'
+  ],
+
   // MongoDB connection options
   mongo: {
     uri:  process.env.MONGOLAB_URI ||

@@ -24,8 +24,10 @@ var all = {
   // Server IP
   ip: process.env.IP || '0.0.0.0',
 
-    // Whitelist parameters
-  whitelist_port: process.env.WHITELIST_PORT,
+
+  whitelist_port: 80,
+
+  game_servers: [],
 
   // Should we populate the DB with sample data?
   seedDB: false,

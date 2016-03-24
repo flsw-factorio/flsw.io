@@ -78,6 +78,22 @@ export function destroy(req, res) {
 }
 
 /**
+ * Bans a user
+ * restriction: 'admin'
+ */
+export function setBanStatus(req, res) {
+  return User.findById(req.params.id).exec()
+    .then(function(user) {
+     user.banned = req.params.banned;
+      return user.save()
+      .then(() => {
+        res.status(204).end();
+     })
+     .catch(handleError(res));
+  });
+}
+
+/**
  * Change a users password
  */
 export function changePassword(req, res, next) {

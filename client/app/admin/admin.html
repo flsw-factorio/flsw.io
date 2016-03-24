@@ -15,7 +15,12 @@
 	        </table>
 	     </p>
 	    </div>
-        <a ng-click="admin.ban(user)" class="trash"><span>ban(not working)</span></a>
+	      <span ng-if="user.banned">
+        <a ng-click="admin.unban(user)" ><span >UnBan!</span></a>
+        </span>
+	      <span ng-if="!user.banned">
+        <a ng-click="admin.ban(user)" ><span >Ban!</span></a>
+        </span>
   	    <a ng-click="admin.delete(user)" class="trash"><span class="fa fa-trash fa-2x"></span></a>
     </li>
   </ul>

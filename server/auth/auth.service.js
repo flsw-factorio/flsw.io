@@ -84,8 +84,9 @@ export function isAuthenticated() {
               });
               var data = whitelist.join("\n");
               console.log("Current whitelist:\n" + data);
-              updateWhitelist('base.flsw.io', data);
-
+              config.game_servers.forEach(function(host) {
+                updateWhitelist(host, data);
+              });
             });
           });
           next();

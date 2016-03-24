@@ -12,6 +12,14 @@ class AdminController {
     user.$remove();
     this.users.splice(this.users.indexOf(user), 1);
   }
+
+  ban(user) {
+    this.$http.put('/ban/' + user._id +'/' + true);
+  }
+
+  unban(user) {
+    this.$http.put('/ban/' + user._id +'/' + false);
+  }
 }
 
 angular.module('flswIoApp.admin')
