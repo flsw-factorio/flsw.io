@@ -1,4 +1,3 @@
-* Don't destroy user records on deletion, just decomission them
-* add a confirmation dialog to the delete action
-* Add ban/unban button
-* Add ban functionality (force update of whitelists)
+* Page for user to whitelist their current IP (with warning on consequences of misuse)
+* Admin portal with user list and recent activity
+* Ban/unban button
