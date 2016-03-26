@@ -1,80 +1,272 @@
-<!doctype html>
-<html ng-app="flswIo">
-  <head>
-    <meta charset="utf-8">
-    <title>flswIo</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>flsw.io</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
 
-    <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- run `gulp inject` to automatically populate bower styles dependencies -->
-    <!-- endbower -->
-    <!-- endbuild -->
+		<!-- animate css -->
+		<link rel="stylesheet" href="css/animate.min.css">
+		<!-- bootstrap css -->
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<!-- font-awesome -->
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<!-- google font -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,700,800' rel='stylesheet' type='text/css'>
 
-    <!-- build:css({.tmp/serve,src}) styles/app.css -->
-    <!-- inject:css -->
-    <!-- css files will be automatically insert here -->
-    <!-- endinject -->
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if lt IE 10]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-    <div class="container" ng-controller="MainController as main">
-    
-      <div>
-        <acme-navbar creation-date="main.creationDate"></acme-navbar>
-      </div>
-    
-      <div class="jumbotron text-center">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">
-          <img src="assets/images/yeoman.png" alt="I'm Yeoman"><br>
-          Always a pleasure scaffolding your apps.
-        </p>
-        <p class="animated infinite" ng-class="main.classAnimation">
-          <button type="button" class="btn btn-lg btn-success" ng-click="main.showToastr()">Splendid Toastr</button>
-        </p>
-        <p>
-          With ♥ thanks to the contributions of<acme-malarkey extra-values="['Yeoman', 'Gulp', 'Angular']"></acme-malarkey>
-        </p>
-      </div>
-    
-      <div class="row">
-        <div class="col-sm-6 col-md-4" ng-repeat="awesomeThing in main.awesomeThings | orderBy:'rank'">
-          <div class="thumbnail">
-            <img class="pull-right" ng-src="assets/images/{{ awesomeThing.logo }}" alt="{{ awesomeThing.title }}">
-            <div class="caption">
-              <h3>{{ awesomeThing.title }}</h3>
-              <p>{{ awesomeThing.description }}</p>
-              <p><a ng-href="{{awesomeThing.url}}">{{ awesomeThing.url }}</a></p>
+		<!-- custom css -->
+		<link rel="stylesheet" href="css/templatemo-style.css">
+	</head>
+	<body>
+		<!-- start preloader -->
+		<div class="preloader">
+			<div class="sk-spinner sk-spinner-rotating-plane"></div>
+    	 </div>
+		<!-- end preloader -->
+        
+		<!-- start navigation -->
+		<nav class="navbar navbar-default navbar-fixed-top templatemo-nav" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+						<span class="icon icon-bar"></span>
+						<span class="icon icon-bar"></span>
+						<span class="icon icon-bar"></span>
+					</button>
+					<a href="#" class="navbar-brand">Flsw.io</a>
+				</div>
+				<div class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-right text-uppercase">
+						<li><a href="#home">Home</a></li>
+						<li><a href="#feature">Features</a></li>
+						<li><a href="#servers">servers</a></li>
+						<li><a href="#download">Download</a></li>
+						<li><a href="#register">Register</a></li>
+                        <li><a href="" data-toggle="modal" data-target="#login">LOGIN</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- end navigation -->
+        
+        <!-- login -->
+        <div class="modal modal-dialog" id="login" role="dialog">
+            <div class="wow" data-wow-delay="0.6s">
+                <div class="login-form">
+                    <form action="#" method="post">
+                        <h2>Enter your login</h2>
+                        <div class="col-md-12 padding">
+                            <input type="email" class="login-control" placeholder="Email">
+                        </div>
+                        <div class="col-md-12 padding">
+                            <input type="text" class="login-control" placeholder="Password">
+                        </div>
+                        <div class="col-md-6 padding">
+                            <button class="btn btn-primary text-uppercase" data-dismiss="modal">close</button>
+                        </div>
+                        <div class="col-md-6 padding">
+                            <button type="submit" class="btn btn-primary text-uppercase">LOGIN</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    
-    </div>
-    
+        
+        <!-- end login -->
+        
+		<!-- start home -->
+		<section id="home">
+			<div class="overlay">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-1"></div>
+						<div class="col-md-10 wow fadeIn" data-wow-delay="0.3s">
+							<h1 class="text-upper">Flsw.io</h1>
+							<p class="tm-white">A Factorio community that hosts Factorio servers</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end home -->
+		<!-- start divider -->
+		<section id="divider">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">
+						<i class="fa fa-laptop"></i>
+						<h3 class="text-uppercase">RESPONSIVE LAYOUT</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
+					</div>
+					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">
+						<i class="fa fa-twitter"></i>
+						<h3 class="text-uppercase">BOOTSTRAP 3.3.4</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
+					</div>
+					<div class="col-md-4 wow fadeInUp templatemo-box" data-wow-delay="0.3s">
+						<i class="fa fa-font"></i>
+						<h3 class="text-uppercase">GOOGLE FONT</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end divider -->
 
-    <!-- build:js(src) scripts/vendor.js -->
-    <!-- bower:js -->
-    <!-- run `gulp inject` to automatically populate bower script dependencies -->
-    <!-- endbower -->
-    <!-- endbuild -->
+		<!-- start feature -->
+		<section id="feature">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 wow fadeInLeft" data-wow-delay="0.6s">
+						<h2 class="text-uppercase">NEWS</h2>
+						<p>Coal has been setup</p>
+						<p><span><i class="fa fa-mobile"></i></span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+						<p><i class="fa fa-code"></i>Quis autem velis reprehenderit et quis voluptate velit esse quam.</p>
+					</div>
+					<div class="col-md-6 wow fadeInRight" data-wow-delay="0.6s">
+						<img src="images/software-img.png" class="img-responsive" alt="feature img">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end feature -->
 
-    <!-- build:js({.tmp/serve,.tmp/partials,src}) scripts/app.js -->
-    <!-- inject:js -->
-    <!-- js files will be automatically insert here -->
-    <!-- endinject -->
+		<!-- start feature1 -->
+        <div id="post"><p>awdawdaw</p></div>
+		<!-- end feature1 -->
 
-    <!-- inject:partials -->
-    <!-- angular templates will be automatically converted in js and inserted here -->
-    <!-- endinject -->
-    <!-- endbuild -->
+		<!-- start servers -->
+		<section id="servers">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 wow bounceIn">
+						<h2 class="text-uppercase">Our Servers</h2>
+					</div>
+					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
+						<div class="servers text-uppercase">
+							<div class="servers-title" id="server-pvp">
+								<h4>PVP FACTORIO</h4>
+								<p>Players: 0/50</p>
+								<small class="text-lowercase">COMMING SOON</small>
+							</div>
+							<ul>
+								<li>Faction</li>
+								<li>player vs player</li>
+								<li>-----------</li>
+								<li>-----------</li>
+							</ul>
+							<button class="btn btn-primary text-uppercase" data-toggle="modal" data-target="#login">More info</button>
+						</div>
+					</div>
+					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
+						<div class="servers active text-uppercase">
+							<div class="servers-title" id="server-mod">
+								<h4>Modded FACTORIO</h4>
+								<p>ONLINE / OFFLINE</p>
+								<small class="text-lowercase">Last restart: 10-3-2016</small>
+							</div>
+							<ul>
+								<li>RSO-1.5.0</li>
+								<li>RAIL TANKER-1.1.3</li>
+								<li></li>
+								<li></li>
+							</ul>
+							<button class="btn btn-primary text-uppercase">More info</button>
+						</div>
+					</div>
+					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
+						<div class="servers text-uppercase">
+							<div class="servers-title" id="server-ts">
+								<h4>Teamspeak 3</h4>
+								<p>Users: 10/50</p>
+								<small class="text-lowercase">monthly</small>
+							</div>
+							<ul>
+								<li>communicate</li>
+								<li>Have fun</li>
+								<li>make freinds</li>
+								<li>be nice</li>
+							</ul>
+							<a href="ts3server://ts.flsw.io/?port=9987&nickname=Web Guest"><button class="btn btn-primary text-uppercase">connect</button></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end servers -->
 
-  </body>
+		<!-- start download -->
+		<section id="download">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 wow fadeInLeft" data-wow-delay="0.6s">
+						<h2 class="text-uppercase">Download Our Software</h2>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation. </p>
+						<button class="btn btn-primary text-uppercase"><i class="fa fa-download"></i> Download</button>
+					</div>
+					<div class="col-md-6 wow fadeInRight" data-wow-delay="0.6s">
+						<img src="images/software-img.png" class="img-responsive" alt="feature img">
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end download -->
+
+		<!-- start register -->
+		<section id="register">
+			<div class="overlay">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+							<h2 class="text-uppercase">register</h2>
+							<p>Register now to get access to our services:</p>
+							<access>
+								<p><i class="fa fa-plus"></i>Modded Factorio server</p>
+								<p><i class="fa fa-plus"></i>PVP Factorio server</p>
+								<p><i class="fa fa-plus"></i>TeamSpeak server</p>
+							</access>
+						</div>
+						<div class="col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+							<div class="register-form">
+								<form action="#" method="post">
+									<div class="col-md-12">
+										<input type="text" class="form-control" placeholder="User Name">
+									</div>
+									<div class="col-md-12">
+										<input type="email" class="form-control" placeholder="Email">
+									</div>
+									<div class="col-md-12">
+										<input type="text" class="form-control" placeholder="Password">
+									</div>
+									<div class="col-md-12">
+										<input type="submit" class="form-control text-uppercase" value="Register">
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- end contact -->
+
+		<!-- start footer -->
+		<footer>
+			<div class="container">
+				<div class="row">
+					<p>Copyright © 2084 FLSW.IO</p>
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
+        
+		<script src="js/jquery.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/wow.min.js"></script>
+		<script src="js/jquery.singlePageNav.min.js"></script>
+		<script src="js/custom.js"></script>
+	</body>
 </html>
