@@ -188,7 +188,7 @@ img
         height: 310px;
         background-color: #fff;
     }
-#login .header
+#login h2
     {
         text-align: center;
         color: #333;
@@ -339,7 +339,7 @@ img
     }
 /* end news1 */
 
-/* start pricing */
+/* start servers */
 #servers
     {
         background: #f8f8f8;
@@ -416,6 +416,58 @@ img
         background-color: var(--offline)
     }
 /* end servers */
+
+/* start modded modal*/
+#modded
+    {
+        position: fixed;
+        color: #fff;
+        height: 400px;
+        background-color: #fff;
+    }
+#modded .text
+    {
+        text-align: center;
+        color: #333;
+        padding-bottom: 10px;
+    }
+#modded .table
+    {
+        text-align: center;
+        color: #333;
+        padding-bottom: 10px;
+    }
+#modded th
+    {
+        text-align: center;
+    }
+#modded i
+    {
+        text-align: center;
+        color: var(--orange);
+        padding-bottom: 10px;
+    }
+#modded li
+    {
+        padding-left: -10px;
+        float: left;
+        text-align: left;
+        color: #333;
+    }
+
+#modded button
+    {
+        border-radius: 0px;
+        font-weight: bold;
+        background: var(--orange);
+        border-color: var(--orange);
+        padding: 10px 40px 10px 40px;
+    }
+#modded .padding
+    {
+        padding-left: 30px;
+    }
+/* end modded modal*/
 
 /* start download */
 #download
