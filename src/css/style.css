@@ -185,7 +185,7 @@ img
     {
         position: fixed;
         color: #fff;
-        height: 310px;
+        height: 35%;
         background-color: #fff;
     }
 #login h2
@@ -194,12 +194,11 @@ img
         color: #333;
         padding-bottom: 10px;
     }
-#login p
+#login label
     {
-        padding-left: -10px;
-        float: left;
-        text-align: left;
         color: #333;
+        text-align: right;
+        height: 15;  
     }
 #login .login-form
     {
@@ -224,12 +223,12 @@ img
     }
 #login input[type="checkbox"]
     {
-        height: 20px;
+        height: 15px;
         float: left;
-        align-content: flex-start;
     }
 #login button
     {
+        width: 99%;
         border-radius: 0px;
         font-weight: bold;
         background: var(--orange);

@@ -8,7 +8,10 @@
 * maybe make it so when you are logged in you can see ip in more info modals?
 * add chat maybe? http://demo.neontheme.com/extra/chat-api/
 * easely edit news? http://demo.neontheme.com/forms/wysiwyg/
+* switch from teamspeak to discord https://discordapp.com/, its harder to break because its linked to you e-mail.
 
 
 * badgamernl
 * add PVP modal
+
+
