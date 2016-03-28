@@ -417,12 +417,40 @@ img
     }
 /* end servers */
 
+/* start pvp modal*/
+#pvp
+    {
+        position: fixed;
+        color: #fff;
+        height: 250px;
+        background-color: #fff;
+    }
+#pvp .text
+    {
+        text-align: center;
+        color: #333;
+        padding-bottom: 10px;
+    }
+#pvp button
+    {
+        border-radius: 0px;
+        font-weight: bold;
+        background: var(--orange);
+        border-color: var(--orange);
+        padding: 10px 40px 10px 40px;
+    }
+#pvp .padding
+    {
+        padding-left: 30px;
+    }
+/* end pvp modal*/
+
 /* start modded modal*/
 #modded
     {
         position: fixed;
         color: #fff;
-        height: 400px;
+        height: 450px;
         background-color: #fff;
     }
 #modded .text
@@ -430,12 +458,12 @@ img
         text-align: center;
         color: #333;
         padding-bottom: 10px;
+        padding-right: 30px
     }
 #modded .table
     {
         text-align: center;
         color: #333;
-        padding-bottom: 10px;
     }
 #modded th
     {
@@ -583,12 +611,28 @@ footer
     #login .overlay {
         padding-top: 40px;
     }
+    #home p
+        {
+            padding-bottom: 250px
+        }
+    #home h1
+        {
+            padding-top: 260px
+        }
 }
 /* start media 360 */
 @media screen and ( max-width: 360px ){
     .servers
         {
             padding-bottom: 40px;
+        }
+    #home p
+        {
+            padding-bottom: 250px
+        }
+    #home h1
+        {
+            padding-top: 260px
         }
 }
 /* end media 360 */
