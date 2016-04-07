@@ -62,4 +62,5 @@ $(function() {
           $( '#register-form' ).html("Great! Now you can login and submit your IP to the whitelist!");
         });
     });
+    $('#whitelist-button').click(function() { //send request to API to whitelist current ip});
 });
