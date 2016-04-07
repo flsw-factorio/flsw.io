@@ -1,7 +1,8 @@
 :root {
     --orange: #FF9F1C;
-    --offline: #db0000;
-    --online: #0da500;
+    --offline: #ef0000;
+    --online: #0daa00;
+    --navtex: #7c7c7c;
 }
 
 #spacer{
@@ -18,7 +19,9 @@ body
         height: 100%;
         overflow-x: hidden;
     }
-	
+body.modal-open {
+    overflow: visible;
+}
 .tm-white a {
 	color: #fff;
 }
@@ -150,7 +153,7 @@ img
     }
 .navbar-default .nav li a
     {
-        color: #666;
+        color: var(--navtex);
         font-size: 13px;
         font-weight: bold;
         height: 70px;
@@ -180,9 +183,9 @@ img
 /* start login */
 #login
     {
-        
+        position: fixed;
         color: #fff;
-        height: 310px;
+        height: 35%;
         background-color: #fff;
     }
 #login h2
@@ -190,6 +193,12 @@ img
         text-align: center;
         color: #333;
         padding-bottom: 10px;
+    }
+#login label
+    {
+        color: #333;
+        text-align: right;
+        height: 15;  
     }
 #login .login-form
     {
@@ -210,10 +219,16 @@ img
     }
 #login button[type="submit"]
     {
-        
+        float: right;
+    }
+#login input[type="checkbox"]
+    {
+        height: 15px;
+        float: left;
     }
 #login button
     {
+        width: 99%;
         border-radius: 0px;
         font-weight: bold;
         background: var(--orange);
@@ -222,7 +237,7 @@ img
     }
 #login .padding
     {
-        padding: 10px;
+        padding: 5px;
     }
 /* end login */
 
@@ -266,22 +281,22 @@ img
     }
 /* end divider */
 
-/* start feature */
-#feature
+/* start news */
+#news
     {
         background: #f8f8f8;
         padding-top: 80px;
         padding-bottom: 80px;
     }
-#feature p
+#news p
     {
         padding-top: 10px;
     }
-#feature span
+#news span
     {
         float: left;
     }
-#feature .fa
+#news .fa
     {
         background: var(--orange);
         border-radius: 50%;
@@ -293,23 +308,23 @@ img
         text-align: center;
         margin-right: 20px;
     }
-/* end feature */
+/* end news */
 
-/* start feature1 */
-#feature1
+/* start news1 */
+#news1
     {
         padding-top: 60px;
         padding-bottom: 60px;
     }
-#feature1 p
+#news1 p
     {
         padding-top: 10px;
     }
-#feature1 span
+#news1 span
     {
         float: left;
     }
-#feature1 .fa
+#news1 .fa
     {
         background: var(--orange);
         border-radius: 50%;
@@ -321,9 +336,9 @@ img
         text-align: center;
         margin-right: 20px;
     }
-/* end feature1 */
+/* end news1 */
 
-/* start pricing */
+/* start servers */
 #servers
     {
         background: #f8f8f8;
@@ -400,6 +415,86 @@ img
         background-color: var(--offline)
     }
 /* end servers */
+
+/* start pvp modal*/
+#pvp
+    {
+        position: fixed;
+        color: #fff;
+        height: 250px;
+        background-color: #fff;
+    }
+#pvp .text
+    {
+        text-align: center;
+        color: #333;
+        padding-bottom: 10px;
+    }
+#pvp button
+    {
+        border-radius: 0px;
+        font-weight: bold;
+        background: var(--orange);
+        border-color: var(--orange);
+        padding: 10px 40px 10px 40px;
+    }
+#pvp .padding
+    {
+        padding-left: 30px;
+    }
+/* end pvp modal*/
+
+/* start modded modal*/
+#modded
+    {
+        position: fixed;
+        color: #fff;
+        height: 450px;
+        background-color: #fff;
+    }
+#modded .text
+    {
+        text-align: center;
+        color: #333;
+        padding-bottom: 10px;
+        padding-right: 30px
+    }
+#modded .table
+    {
+        text-align: center;
+        color: #333;
+    }
+#modded th
+    {
+        text-align: center;
+    }
+#modded i
+    {
+        text-align: center;
+        color: var(--orange);
+        padding-bottom: 10px;
+    }
+#modded li
+    {
+        padding-left: -10px;
+        float: left;
+        text-align: left;
+        color: #333;
+    }
+
+#modded button
+    {
+        border-radius: 0px;
+        font-weight: bold;
+        background: var(--orange);
+        border-color: var(--orange);
+        padding: 10px 40px 10px 40px;
+    }
+#modded .padding
+    {
+        padding-left: 30px;
+    }
+/* end modded modal*/
 
 /* start download */
 #download
@@ -493,10 +588,10 @@ footer
     .servers {
         margin-bottom: 20px;
     }
-    #feature img, #download img {
+    #news img, #download img {
         margin-top: 30px;
     }
-    #feature1 img {
+    #news1 img {
         margin-bottom: 30px;
     }
 }
@@ -505,7 +600,7 @@ footer
         height: auto;
         line-height: 2em;
     }
-    #feature, #servers, #download {
+    #news, #servers, #download {
         padding-top: 20px;
         padding-bottom: 40px;
     }
@@ -515,12 +610,28 @@ footer
     #login .overlay {
         padding-top: 40px;
     }
+    #home p
+        {
+            padding-bottom: 250px
+        }
+    #home h1
+        {
+            padding-top: 260px
+        }
 }
 /* start media 360 */
 @media screen and ( max-width: 360px ){
     .servers
         {
             padding-bottom: 40px;
+        }
+    #home p
+        {
+            padding-bottom: 250px
+        }
+    #home h1
+        {
+            padding-top: 260px
         }
 }
 /* end media 360 */
