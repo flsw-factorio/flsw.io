@@ -3,6 +3,8 @@ $(window).load(function(){
     $('.preloader').fadeOut(1000); // set duration in brackets
 });
 
+var global_user = null;
+
 $(function() {
     new WOW().init();
     $('.templatemo-nav').singlePageNav({
@@ -17,7 +19,6 @@ $(function() {
 
     $('#login-form').submit(function(event) {
       event.preventDefault();
-      event.preventDefault();
       var $inputs = $('#login-form :input');
       var values = {};
       $inputs.each(function() {
@@ -30,10 +31,14 @@ $(function() {
       $.ajax({
         type : "GET",
         url: "/api/accounts/" + values['username'],
-        data: data,
         xhrFields: { withCredentials: true },
         headers: { "Authorization": 'Basic ' + authfield }
-      }).done(function( data ) {$('#login').modal('hide');}); 
+      }).done(function( data ) {
+	      $('#login').modal('hide');
+	      global_user = data;
+	      global_user.auth = authfield;
+	      $('#user_ip').html("69.69.69.69");
+      }); 
     });
     $('#register-form').submit(function(event) {
       event.preventDefault();
