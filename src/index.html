@@ -46,6 +46,7 @@
 						<li><a href="#download">Download</a></li>
 						<li><a href="#register">Register</a></li>
                         <li><a href="" data-toggle="modal" data-target="#login">LOGIN</a></li>
+                        <li><a href="" data-toggle="modal" data-target="#myacc">My account</a></li>
 					</ul>
 				</div>
 			</div>
@@ -61,11 +62,12 @@
                             <h2>Enter your login</h2>
                         </div>
                         <div class="col-md-12 padding">
-                            <input type="text" name="username" class="login-control" placeholder="User Name">
+                            <input type="text" name="username" placeholder="User Name">
                         </div>
                         <div class="col-md-12 padding">
-                            <input type="text" name="password" class="login-control" placeholder="Password">
+                            <input type="text" name="password" placeholder="Password">
                         </div>
+<!--          remember me bugged              
                         <div class="col-md-12">
                           <div>
                             <label class="checkbox-inline">
@@ -74,6 +76,7 @@
                             </label>
                           </div>
                         </div>
+-->
                         <div class="col-md-6 padding">
                             <button class="btn btn-primary text-uppercase" data-dismiss="modal">close</button>
                         </div>
@@ -86,8 +89,40 @@
         </div>
 
         <!-- end login -->
+        
+        <!-- myaccount -->
+        <div class="modal modal-dialog" id="myacc" role="dialog">
+            <div class="wow" data-wow-delay="0.6s">
+                <!-- start whitelist-ip -->
+                <div class="col-md-1 center">
+                </div>
+                <div class="col-md-5 margin login-form" id="acc_set">
+                    <form id="acc-form" action="" method="">
+                        <h2>Account settings</h2>
+                        <p>comming soon</p>
+                        <input type="text" name="username" placeholder="new username">
+                        <button type="submit" class="btn btn-primary text-uppercase">SAVE</button>
+                    </form>
+                </div>
+                <div class="col-md-5 margin" id="whitelist_ip">
+                    <h2>IP settings</h2>
+                    <p>Your IP is used for the server whitelist</p>
+                    <p>whitelisted IP: <span id="user_ip_active">no IP whitelisted</span></p>
+                    <p>Your current IP: <span id="user_ip">error could not get IP address</span></p>
+                    <button class="btn btn-primary text-uppercase" id="whitelist">Whitelist This IP</button>
+                </div>
+                <div class="col-md-1 center">
+                </div>
+                <!-- end whitelist-ip -->
+                <div class="col-md-12 padding">
+                    <button class="btn btn-primary text-uppercase btn-close" data-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
 
-		<!-- start home -->
+        <!-- end myaccount -->
+
+		<!-- start home -->    
 		<section id="home">
 			<div class="overlay">
 				<div class="container">
@@ -161,7 +196,7 @@
 							<div class="servers-title" id="server-pvp">
 								<h4>PVP FACTORIO</h4>
 								<p>Players: 0/50</p>
-								<small class="text-lowercase">COMMING SOON</small>
+								<small class="text-lowercase">COME TEST</small>
 							</div>
 							<ul>
 								<li>Faction</li>
@@ -191,21 +226,21 @@
                             </div>
                         </div>
                     </div>
-                    <!--      END PVP             -->
+                    <!--      END  PVP             -->
                     
                     <!--        MODDED            -->
 					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
 						<div class="servers active text-uppercase">
 							<div class="servers-title" id="server-mod">
 								<h4>Modded FACTORIO</h4>
-								<p>ONLINE / OFFLINE</p>
+								<p>Players: 0/50</p>
 								<small class="text-lowercase">Last restart: 10-3-2016</small>
 							</div>
 							<ul>
-								<li>RSO-1.5.0</li>
-								<li>---</li>
-								<li>---</li>
-								<li>---</li>
+								<li>RSO</li>
+								<li>Easy PvE</li>
+								<li>YARM</li>
+								<li>Smart Trains</li>
 							</ul>
 							<button class="btn btn-primary text-uppercase" data-toggle="modal" data-target="#modded">More info</button>
 						</div>
@@ -215,10 +250,10 @@
                     <div class="modal modal-dialog" id="modded" role="dialog">
                         <div class="wow" data-wow-delay="0.6s">
                             <div class="modded-modal">
-                                <div class="modded-header padding">
-                                    <h2 class="text padding">MODDED FACTORIO</h2>
+                                <div class="modded-header">
+                                    <h2 class="text">MODDED FACTORIO</h2>
                                 </div>
-                                <div class="col-md-12 padding">
+                                <div class="col-md-12">
                                     <h3 class="text">MODS</h3>
                                     <table class="table">
                                         <thead>
@@ -231,26 +266,29 @@
                                         <tbody>
                                             <tr>
                                                 <td>RSO</td>
-                                                <td>1.5.0</td>
-                                                <td><a href="#" target="_blank"><i class="fa fa-download"></i></a></td>
+                                                <td>1.5.1</td>
+                                                <td><a href="https://forums.factorio.com/viewtopic.php?f=79&t=13783" target="_blank"><i class="fa fa-download"></i></a></td>
                                             </tr>
                                             <tr>
-                                                <td>---</td>
-                                                <td>---</td>
-                                                <td><a href="#" target="_blank"><i class="fa fa-download"></i></a></td>
+                                                <td>EasyPvE</td>
+                                                <td>0.1.0</td>
+                                                <td><a href="https://github.com/flsw-factorio/EasyPvE/releases/download/0.1.0/EasyPvE_0.1.0.zip" target="_blank"><i class="fa fa-download"></i>&#42;</a></td>
                                             </tr>
                                             <tr>
-                                                <td>---</td>
-                                                <td>---</td>
-                                                <td><a href="#" target="_blank"><i class="fa fa-download"></i></a></td>
+                                                <td>YARM</td>
+                                                <td>0.7.16</td>
+                                                <td><a href="https://github.com/narc0tiq/YARM/releases" target="_blank"><i class="fa fa-download"></i></a></td>
                                             </tr>
                                             <tr>
-                                                <td>---</td>
-                                                <td>---</td>
-                                                <td><a href="#" target="_blank"><i class="fa fa-download"></i></a></td>
+                                                <td>SmartTrains</td>
+                                                <td>0.3.81</td>
+                                                <td><a href="https://forums.factorio.com/viewtopic.php?f=97&t=14432" target="_blank"><i class="fa fa-download"></i></a></td>
                                             </tr>
                                         </tbody>
                                     </table>
+                                </div>
+                                <div class="col-md-12">
+                                    <p class="info">&#42;Direct download</p>
                                 </div>
                                 <div class="col-md-12 padding">
                                     <button class="btn btn-primary text-uppercase" data-dismiss="modal">close</button>
@@ -318,17 +356,7 @@
 			</div>
 		</section>
 		<!-- end register -->
-		<!-- start whitelist-ip -->
-                <section id="whitelist-ip">
-			<div class="overlay">	
-				<div class="container">
-					<p>Your IP is <span id="user_ip"></span></p>
-					<button id="whitelist_ip">Whitelist This IP</button>
-				</div>
-			</div>
-		</section>
-		<!-- end whitelist-ip -->
-
+		
 		<!-- start footer -->
 		<footer>
 			<div class="container">

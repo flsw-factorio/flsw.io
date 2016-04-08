@@ -65,5 +65,8 @@ $(function() {
     $('#whitelist-button').click(function() { 
 	    //send request to API to whitelist current ip
     });
+    $.get("http://ipinfo.io", function(response) {
+        $('#user_ip').text(response.ip);
+    }, "jsonp");
 });
 

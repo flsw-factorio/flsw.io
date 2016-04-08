@@ -185,7 +185,6 @@ img
     {
         position: fixed;
         color: #fff;
-        height: 35%;
         background-color: #fff;
     }
 #login h2
@@ -204,15 +203,9 @@ img
     {
         padding: 20px;
     }
-#login .form-control
-    {
-        border: none;
-        border-radius: 0px;
-        box-shadow: none;
-    }
 #login input
     {
-        height: 50px;
+        height: 40px;
         width: 100%;
         color: #333;
         padding-bottom: 10px;
@@ -240,6 +233,81 @@ img
         padding: 5px;
     }
 /* end login */
+/* start myaccount */
+#myacc
+    {
+        position: fixed;
+        color: #333;
+        height: 37%;
+        background-color: #f8f8f8;
+    }
+#myacc h2
+    {
+        text-align: center;
+        color: #333;
+        padding-bottom: 10px;
+        padding-left: 10px;
+    }
+#myacc p
+    {
+        color: #333;
+        padding-bottom: 5px;
+    }
+#myacc span
+    {
+        color: var(--orange);
+        padding-bottom: 10px;
+    }
+#myacc .acc-form
+    {
+        padding: 20px;
+    }
+#myacc input
+    {
+        height: 40px;
+        width: 100%;
+        color: #333;
+        padding-bottom: 10px;
+    }
+#myacc button[type="submit"]
+    {
+        margin-top: 15px;
+        float: right;
+    }
+#myacc button
+    {
+        width: 99%;
+        border-radius: 0px;
+        font-weight: bold;
+        background: var(--orange);
+        border-color: var(--orange);
+        padding: 10px 40px 10px 40px;
+    }
+#myacc .btn-close
+    {
+        margin-top: 15px;
+        margin-left: 10px;
+    }
+#myacc #whitelist_ip
+    {
+        padding-bottom: 15px;
+        background-color: #fff;
+    }
+#myacc #acc_set
+    {
+        padding-bottom: 15px;
+        background-color: #fff;
+    }
+#myacc .margin
+    {
+        margin-top: 15px;
+        margin-left: 15px;
+    }
+#myacc .center
+    {
+        width: 0px;
+    }
+/* end myaccount */
 
 /* start home */       
 #home
@@ -255,11 +323,11 @@ img
         font-weight: 400;
         font-style: italic;
         line-height: 2em;
-        padding-bottom: 300px
+        padding-bottom: 300px;
     }
 #home h1
     {
-        padding-top: 400px
+        padding-top: 400px;
     }
 /* end home */
 
@@ -412,7 +480,7 @@ img
     }
 #servers #server-pvp
     {
-        background-color: var(--offline)
+        background-color: var(--online)
     }
 /* end servers */
 
@@ -457,7 +525,11 @@ img
         text-align: center;
         color: #333;
         padding-bottom: 10px;
-        padding-right: 30px
+    }
+#modded .info
+    {
+        text-align: center;
+        color: var(--orange);
     }
 #modded .table
     {
