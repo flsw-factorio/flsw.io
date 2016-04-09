@@ -238,8 +238,8 @@ img
     {
         position: fixed;
         color: #333;
-        height: 37%;
-        background-color: #f8f8f8;
+        width: auto;
+        background-color: transparent;
     }
 #myacc h2
     {
@@ -288,12 +288,7 @@ img
         margin-top: 15px;
         margin-left: 10px;
     }
-#myacc #whitelist_ip
-    {
-        padding-bottom: 15px;
-        background-color: #fff;
-    }
-#myacc #acc_set
+#myacc .bg
     {
         padding-bottom: 15px;
         background-color: #fff;
@@ -306,6 +301,11 @@ img
 #myacc .center
     {
         width: 0px;
+    }
+#myacc .col-centered 
+    {
+        float:none;
+        margin: 0 auto;
     }
 /* end myaccount */
 
@@ -592,6 +592,7 @@ img
 /* start register */
 #register
     {
+        background-position: top;
         background: url('../images/register-bg.jpg') no-repeat;
         background-size: cover;
         color: #fff;

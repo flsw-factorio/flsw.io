@@ -43,7 +43,6 @@
 						<li><a href="#home">Home</a></li>
 						<li><a href="#news">news</a></li>
 						<li><a href="#servers">servers</a></li>
-						<li><a href="#download">Download</a></li>
 						<li><a href="#register">Register</a></li>
                         <li><a href="" data-toggle="modal" data-target="#login">LOGIN</a></li>
                         <li><a href="" data-toggle="modal" data-target="#myacc">My account</a></li>
@@ -92,11 +91,9 @@
         
         <!-- myaccount -->
         <div class="modal modal-dialog" id="myacc" role="dialog">
-            <div class="wow" data-wow-delay="0.6s">
-                <!-- start whitelist-ip -->
-                <div class="col-md-1 center">
-                </div>
-                <div class="col-md-5 margin login-form" id="acc_set">
+            <div class="wow col-md-4 margin col-centered" data-wow-delay="0.6s">
+                <!-- acc set -->
+                <div class="col-md-5 margin login-form bg wow">
                     <form id="acc-form" action="" method="">
                         <h2>Account settings</h2>
                         <p>comming soon</p>
@@ -104,25 +101,22 @@
                         <button type="submit" class="btn btn-primary text-uppercase">SAVE</button>
                     </form>
                 </div>
-                <div class="col-md-5 margin" id="whitelist_ip">
+                <!-- end acc set -->
+                <!-- start whitelist-ip -->
+                <div class="col-md-5 margin bg wow">
                     <h2>IP settings</h2>
                     <p>Your IP is used for the server whitelist</p>
                     <p>whitelisted IP: <span id="user_ip_active">no IP whitelisted</span></p>
                     <p>Your current IP: <span id="user_ip">error could not get IP address</span></p>
                     <button class="btn btn-primary text-uppercase" id="whitelist">Whitelist This IP</button>
                 </div>
-                <div class="col-md-1 center">
-                </div>
                 <!-- end whitelist-ip -->
-                <div class="col-md-12 padding">
-                    <button class="btn btn-primary text-uppercase btn-close" data-dismiss="modal">close</button>
-                </div>
             </div>
         </div>
 
         <!-- end myaccount -->
 
-		<!-- start home -->    
+		<!-- start home -->             
 		<section id="home">
 			<div class="overlay">
 				<div class="container">
