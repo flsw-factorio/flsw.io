@@ -51,72 +51,8 @@
 			</div>
 		</nav>
 		<!-- end navigation -->
-
-        <!-- login -->
-        <div class="modal modal-dialog" id="login" role="dialog">
-            <div class="wow" data-wow-delay="0.6s">
-                <div class="login-form">
-                    <form id="login-form" action="" method="post">
-                        <div class="login-header">
-                            <h2>Enter your login</h2>
-                        </div>
-                        <div class="col-md-12 padding">
-                            <input type="text" name="username" placeholder="User Name">
-                        </div>
-                        <div class="col-md-12 padding">
-                            <input type="text" name="password" placeholder="Password">
-                        </div>
-<!--          remember me bugged              
-                        <div class="col-md-12">
-                          <div>
-                            <label class="checkbox-inline">
-                                <input type="checkbox"> 
-                                Remember me
-                            </label>
-                          </div>
-                        </div>
--->
-                        <div class="col-md-6 padding">
-                            <button class="btn btn-primary text-uppercase" data-dismiss="modal">close</button>
-                        </div>
-                        <div class="col-md-6 padding">
-                            <button type="submit" class="btn btn-primary text-uppercase">LOGIN</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <!-- end login -->
         
-        <!-- myaccount -->
-        <div class="modal modal-dialog" id="myacc" role="dialog">
-            <div class="wow col-md-4 margin col-centered" data-wow-delay="0.6s">
-                <!-- acc set -->
-                <div class="col-md-5 margin login-form bg wow">
-                    <form id="acc-form" action="" method="">
-                        <h2>Account settings</h2>
-                        <p>comming soon</p>
-                        <input type="text" name="username" placeholder="new username">
-                        <button type="submit" class="btn btn-primary text-uppercase">SAVE</button>
-                    </form>
-                </div>
-                <!-- end acc set -->
-                <!-- start whitelist-ip -->
-                <div class="col-md-5 margin bg wow">
-                    <h2>IP settings</h2>
-                    <p>Your IP is used for the server whitelist</p>
-                    <p>whitelisted IP: <span id="user_ip_active">no IP whitelisted</span></p>
-                    <p>Your current IP: <span id="user_ip">error could not get IP address</span></p>
-                    <button class="btn btn-primary text-uppercase" id="whitelist">Whitelist This IP</button>
-                </div>
-                <!-- end whitelist-ip -->
-            </div>
-        </div>
-
-        <!-- end myaccount -->
-
-		<!-- start home -->             
+		<!-- start home -->                   
 		<section id="home">
 			<div class="overlay">
 				<div class="container">
@@ -131,7 +67,8 @@
 				</div>
 			</div>
 		</section>
-		<!-- end home -->
+		<!-- end home --> 
+
 		<!-- start divider -->
 <!--
 		<section id="divider">
@@ -202,24 +139,7 @@
 						</div>
 					</div>
                     <!--       PVP MODAL             -->
-                    <div class="modal modal-dialog" id="pvp" role="dialog">
-                        <div class="wow" data-wow-delay="0.6s">
-                            <div class="pvp-modal">
-                                <div class="pvp-header padding">
-                                    <h2 class="text padding">COMMING SOON</h2>
-                                </div>
-                                <div class="col-md-12 padding">
-                                    <h3 class="text padding">Player vs Player</h3>
-                                </div>
-                                <div class="col-md-12 padding">
-                                    <p class="text padding">Action with no limets.</p>
-                                </div>
-                                <div class="col-md-12 padding">
-                                    <button class="btn btn-primary text-uppercase" data-dismiss="modal">close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                     <!--      END  PVP             -->
                     
                     <!--        MODDED            -->
@@ -239,59 +159,6 @@
 							<button class="btn btn-primary text-uppercase" data-toggle="modal" data-target="#modded">More info</button>
 						</div>
 					</div>
-                    
-                    <!--       MODDED MODAL             -->
-                    <div class="modal modal-dialog" id="modded" role="dialog">
-                        <div class="wow" data-wow-delay="0.6s">
-                            <div class="modded-modal">
-                                <div class="modded-header">
-                                    <h2 class="text">MODDED FACTORIO</h2>
-                                </div>
-                                <div class="col-md-12">
-                                    <h3 class="text">MODS</h3>
-                                    <table class="table">
-                                        <thead>
-                                          <tr>
-                                            <th>MOD</th>
-                                            <th>VERSOIN</th>
-                                            <th>DOWNLOAD</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>RSO</td>
-                                                <td>1.5.1</td>
-                                                <td><a href="https://forums.factorio.com/viewtopic.php?f=79&t=13783" target="_blank"><i class="fa fa-download"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>EasyPvE</td>
-                                                <td>0.1.0</td>
-                                                <td><a href="https://github.com/flsw-factorio/EasyPvE/releases/download/0.1.0/EasyPvE_0.1.0.zip" target="_blank"><i class="fa fa-download"></i>&#42;</a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>YARM</td>
-                                                <td>0.7.16</td>
-                                                <td><a href="https://github.com/narc0tiq/YARM/releases" target="_blank"><i class="fa fa-download"></i></a></td>
-                                            </tr>
-                                            <tr>
-                                                <td>SmartTrains</td>
-                                                <td>0.3.81</td>
-                                                <td><a href="https://forums.factorio.com/viewtopic.php?f=97&t=14432" target="_blank"><i class="fa fa-download"></i></a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                                <div class="col-md-12">
-                                    <p class="info">&#42;Direct download</p>
-                                </div>
-                                <div class="col-md-12 padding">
-                                    <button class="btn btn-primary text-uppercase" data-dismiss="modal">close</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--      END MODDED              -->
-                    
 					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
 						<div class="servers text-uppercase">
 							<div class="servers-title" id="server-ts">
@@ -360,6 +227,140 @@
 			</div>
 		</footer>
 		<!-- end footer -->
+
+        <!--       MODDED MODAL             -->
+        <div class="modal modal-dialog" id="modded" role="dialog">
+            <div class="wow col-md-6"  id="MODAL" data-wow-delay="0.6s">
+                <div class="col-md-12 bg">
+                    <h2>MODDED FACTORIO</h2>
+                    <h3>MODS</h3>
+                    <div class="col-md-12">
+                        <table class="table">
+                            <thead>
+                              <tr>
+                                <th>MOD</th>
+                                <th>VERSOIN</th>
+                                <th>DOWNLOAD</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>RSO</td>
+                                    <td>1.5.1</td>
+                                    <td><a href="https://forums.factorio.com/viewtopic.php?f=79&t=13783" target="_blank"><i class="fa fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>EasyPvE</td>
+                                    <td>0.1.0</td>
+                                    <td><a href="https://github.com/flsw-factorio/EasyPvE/releases/download/0.1.0/EasyPvE_0.1.0.zip" target="_blank"><i class="fa fa-download"></i>&#42;</a></td>
+                                </tr>
+                                <tr>
+                                    <td>YARM</td>
+                                    <td>0.7.16</td>
+                                    <td><a href="https://github.com/narc0tiq/YARM/releases" target="_blank"><i class="fa fa-download"></i></a></td>
+                                </tr>
+                                <tr>
+                                    <td>SmartTrains</td>
+                                    <td>0.3.81</td>
+                                    <td><a href="https://forums.factorio.com/viewtopic.php?f=97&t=14432" target="_blank"><i class="fa fa-download"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p><span>&#42;Direct download</span></p>
+                    <div class="col-md-12 padding">
+                        <button class="btn btn-primary text-uppercase" data-dismiss="modal">close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--      END MODDED              -->
+
+        <!--       PVP MODAL             -->
+        <div class="modal modal-dialog" id="pvp" role="dialog">
+            <div class="wow col-md-8"  id="MODAL" data-wow-delay="0.6s">
+                <div class="col-md-6 bg">
+                    <h2>PVP Factorio</h2>
+                    <h3>MODS</h3>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th>MOD</th>
+                            <th>VERSOIN</th>
+                            <th>DOWNLOAD</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>FLSW Factions</td>
+                                <td>0.2.3</td>
+                                <td><a href="https://github.com/flsw-factorio/flsw_factions/releases/download/0.2.3/flsw_factions_0.2.3.zip" target="_blank"><i class="fa fa-download"></i>&#42;</a></td>
+                            </tr>
+                            <tr>
+                                <td>FLSW Auth</td>
+                                <td>0.1.0</td>
+                                <td><a href="https://github.com/flsw-factorio/flsw_auth/releases/download/0.1.0/flsw_auth_0.1.0.zip" target="_blank"><i class="fa fa-download"></i>&#42;</a></td>
+                            </tr>
+                            <tr>
+                                <td>Diplomacy (FLSW Fork)</td>
+                                <td>0.12.2</td>
+                                <td><a href="https://github.com/flsw-factorio/Diplomacy/releases/download/0.12.2/diplomacy_0.12.2.zip" target="_blank"><i class="fa fa-download"></i>&#42;</a></td>
+                            </tr>
+                            <tr>
+                                <td>---</td>
+                                <td>---</td>
+                                <td><a href="" target="_blank"><i class="fa fa-download"></i></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p><span>&#42;Direct download</span></p>
+                </div>
+                <div class="col-md-4 bg">
+                    <h2>Players</h2>
+                    <ul>
+                        <li>badgamernl</li>
+                        <li>silent</li>
+                        <li>bisa</li>
+                        <li>daniel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--      END PVP              -->
+
+        <!-- login -->
+        <div class="modal modal-dialog" id="login" role="dialog">
+            <div class="wow col-md-4" id="MODAL" data-wow-delay="0.6s">
+                <div class="form-form col-md-12 bg">
+                    <form id="form-form" action="" method="post">
+                        <h2>Enter your login</h2>
+                        <input type="text" name="username" placeholder="User Name">
+                        <input type="text" name="password" placeholder="Password">
+                        <div class="col-md-6 padding">
+                            <button class="btn btn-primary text-uppercase" data-dismiss="modal">close</button>
+                        </div>
+                        <div class="col-md-6 padding">
+                            <button type="submit" class="btn btn-primary text-uppercase">LOGIN</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- end login -->
+
+        <!-- myaccount -->
+        <div class="modal modal-dialog" id="myacc" role="dialog">
+            <div class="wow col-md-4" id="MODAL" data-wow-delay="0.6s">
+                <div class="col-md-12 margin bg">
+                    <h2>IP settings</h2>
+                    <p>Your IP is used for the server whitelist</p>
+                    <p>whitelisted IP: <span id="user_ip_active">no IP whitelisted</span></p>
+                    <p>Your current IP: <span id="user_ip">error could not get IP address</span></p>
+                    <button class="btn btn-primary text-uppercase" id="whitelist">Whitelist This IP</button>
+                </div>
+            </div>
+        </div>
+        <!-- end myaccount -->
 
 		<script src="js/jquery.js"></script>
 		<script src="js/bootstrap.min.js"></script>
