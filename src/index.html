@@ -44,15 +44,15 @@
 <!--						<li><a href="#news">news</a></li>-->
 						<li><a href="#servers">servers</a></li>
 						<li><a href="#register">Register</a></li>
-                        <li><a href="" data-toggle="modal" data-target="#login">LOGIN</a></li>
-                        <li><a href="" data-toggle="modal" data-target="#myacc">My account</a></li>
+            <li><a href="" data-toggle="modal" data-target="#login">LOGIN</a></li>
+            <li><a href="" data-toggle="modal" data-target="#myacc">My account</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 		<!-- end navigation -->
-        
-		<!-- start home -->                   
+
+		<!-- start home -->
 		<section id="home">
 			<div class="overlay">
 				<div class="container">
@@ -67,7 +67,17 @@
 				</div>
 			</div>
 		</section>
-		<!-- end home --> 
+		<!-- end home -->
+
+		<!-- donate -->
+    <div id="donate" class="navbar navbar-fixed-bottom">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----...[Encrypted message]...-----END PKCS7-----">
+        <button name="submit" class="btn btn-primary text-uppercase"><i class="fa fa-paypal "></i>Donate</button>
+        </form>
+    </div>
+		<!-- end donate -->
 
 		<!-- start divider -->
 <!--
@@ -138,10 +148,6 @@
 							<button class="btn btn-primary text-uppercase" data-toggle="modal" data-target="#pvp">More info</button>
 						</div>
 					</div>
-                    <!--       PVP MODAL             -->
-                    
-                    <!--      END  PVP             -->
-                    
                     <!--        MODDED            -->
 					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
 						<div class="servers active text-uppercase">
@@ -159,6 +165,7 @@
 							<button class="btn btn-primary text-uppercase" data-toggle="modal" data-target="#modded">More info</button>
 						</div>
 					</div>
+							<!--             TS3               -->
 					<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
 						<div class="servers text-uppercase">
 							<div class="servers-title" id="server-ts">
@@ -217,7 +224,7 @@
 			</div>
 		</section>
 		<!-- end register -->
-		
+
 		<!-- start footer -->
 		<footer>
 			<div class="container">
@@ -340,7 +347,7 @@
             </div>
         </div>
         <!-- end login -->
-               
+
         <!-- myaccount -->
         <div class="modal modal-dialog" id="myacc" role="dialog">
             <div class="wow col-md-4" id="MODAL" data-wow-delay="0.6s">
