@@ -205,10 +205,9 @@ img
 /*donate button*/
 #donate .fa
     {
-        background: var(--orange);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
+      padding-bottom: 10px;
+        width: 40px;
+        height: 40px;
         line-height: 40px;
         text-align: center;
     }
