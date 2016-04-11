@@ -41,7 +41,7 @@
 				<div class="collapse navbar-collapse">
 					<ul class="nav navbar-nav navbar-right text-uppercase">
 						<li><a href="#home">Home</a></li>
-						<li><a href="#news">news</a></li>
+<!--						<li><a href="#news">news</a></li>-->
 						<li><a href="#servers">servers</a></li>
 						<li><a href="#register">Register</a></li>
                         <li><a href="" data-toggle="modal" data-target="#login">LOGIN</a></li>
@@ -331,27 +331,20 @@
         <!-- login -->
         <div class="modal modal-dialog" id="login" role="dialog">
             <div class="wow col-md-4" id="MODAL" data-wow-delay="0.6s">
-                <div class="form-form col-md-12 bg">
-                    <form id="form-form" action="" method="post">
-                        <h2>Enter your login</h2>
-                        <input type="text" name="username" placeholder="User Name">
-                        <input type="text" name="password" placeholder="Password">
-                        <div class="col-md-6 padding">
-                            <button class="btn btn-primary text-uppercase" data-dismiss="modal">close</button>
-                        </div>
-                        <div class="col-md-6 padding">
-                            <button type="submit" class="btn btn-primary text-uppercase">LOGIN</button>
-                        </div>
-                    </form>
-                </div>
+                <form id="form-form" class="col-md-12 bg" action="" method="post">
+                    <h2>Enter your login</h2>
+                    <input type="text" name="username" placeholder="User Name">
+                    <input type="text" name="password" placeholder="Password">
+                    <button type="submit" class="btn btn-primary col-md-12 text-uppercase">LOGIN</button>
+                </form>
             </div>
         </div>
         <!-- end login -->
-
+               
         <!-- myaccount -->
         <div class="modal modal-dialog" id="myacc" role="dialog">
             <div class="wow col-md-4" id="MODAL" data-wow-delay="0.6s">
-                <div class="col-md-12 margin bg">
+                <div class="col-md-12 bg">
                     <h2>IP settings</h2>
                     <p>Your IP is used for the server whitelist</p>
                     <p>whitelisted IP: <span id="user_ip_active">no IP whitelisted</span></p>
