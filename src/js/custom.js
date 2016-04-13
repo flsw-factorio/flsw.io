@@ -1,6 +1,11 @@
 // preloader
 $(window).load(function(){
     $('.preloader').fadeOut(1000); // set duration in brackets
+    $("#import_nav").load("load/nav.html");
+    $("#import_servers").load("load/servers.html");
+    $("#import_modals").load("load/modal.html");
+    $("#import_register").load("load/register.html");
+    $("#import_footer").load("load/footer.html");
 });
 
 var global_user = null;
