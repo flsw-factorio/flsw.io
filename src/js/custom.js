@@ -38,7 +38,7 @@ $(function() {
 	      global_user = data;
 	      global_user.auth = authfield;
 	      $('#user_ip').html("69.69.69.69");
-      }); 
+      });
     });
     $('#register-form').submit(function(event) {
       event.preventDefault();
@@ -62,11 +62,10 @@ $(function() {
           $( '#register-form' ).html("Great! Now you can login and submit your IP to the whitelist!");
         });
     });
-    $('#whitelist-button').click(function() { 
-	    //send request to API to whitelist current ip
+    $('#whitelist').click(function() {
+      console.log("Whitelisting " + $('#user_ip').text())
     });
     $.get("http://ipinfo.io", function(response) {
         $('#user_ip').text(response.ip);
     }, "jsonp");
 });
-
