@@ -3,9 +3,13 @@ $(window).load(function(){
     $('.preloader').fadeOut(1000); // set duration in brackets
     $("#import_nav").load("load/nav.html");
     $("#import_servers").load("load/servers.html");
-    $("#import_modals").load("load/modal.html");
+    $("#import_modal_login").load("load/modal/login.html");
+    $("#import_modal_myaccount").load("load/modal/myaccount.html");
+    $("#import_modal_pvp").load("load/modal/pvp.html");
+    $("#import_modal_pve").load("load/modal/pve.html");
     $("#import_register").load("load/register.html");
     $("#import_footer").load("load/footer.html");
+    $("#import_donate_button").load("load/donate_button.html");
 });
 
 var global_user = null;
