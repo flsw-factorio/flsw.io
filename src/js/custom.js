@@ -77,4 +77,51 @@ $(function() {
     $.get("http://ipinfo.io", function(response) {
         $('#user_ip').text(response.ip);
     }, "jsonp");
+
+ //    $('#get-data').click(function () {
+ //    var lipvp = $('#show-data-pvp');
+ //    var lipve = $('#show-data-pve');
+ //
+ //      $.getJSON('modlist.json', function (data) {
+ //        console.log(data);
+ // 
+ //        var pvp_mods = data.pvp_mods.map(function (mod) {
+ //          return mod.name + ' : ' + mod.version + ' : ' + mod.url;
+ //        });
+ //
+ //        var pve_mods = data.pve_mods.map(function (mod) {
+ //          return mod.name + ' : ' + mod.version + ' : ' + mod.url;
+ //        });
+ //
+ //        lipvp.empty();
+ //        lipve.empty();
+ //
+ //        if (pvp_mods.length) {
+ //          var content = '<li>' + pvp_mods.join('</li><li>') + '</li>';
+ //          var list = $('<ul />').html(content);
+ //          lipvp.append(list);
+ //        }
+ //        if (pve_mods.length) {
+ //          var content = '<li>' + pve_mods.join('</li><li>') + '</li>';
+ //          var list = $('<ul />').html(content);
+ //          lipve.append(list);
+ //        }
+ //      });
+ //    lipvp.text('Loading the JSON file.');
+ //    lipve.text('Loading the JSON file.');
+ //    });
+ //    $('form').submit(function() {
+ //    $.ajax({
+ //       type: 'POST',
+ //       dataType: 'json',
+ //       url: 'story.json',
+ //       data: $(this).serialize(),
+ //       success: function(data) {
+ //           alert(data.message);
+ //       },
+ //       failure: function (data) {
+ //           alert('Please try again');
+ //       }
+ //    });
+ // });
 });

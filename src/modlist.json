@@ -1,0 +1,32 @@
+{
+  "pve_mods": [{
+    "name": "RSO",
+    "version": "1.5.1",
+    "url": "https://forums.factorio.com/viewtopic.php?f=79&t=13783"
+  }, {
+    "name": "EasyPvE",
+    "version": "0.1.1",
+    "url": "https://github.com/flsw-factorio/EasyPvE/releases"
+  }, {
+    "name": "YARM",
+    "version": "0.7.16",
+    "url": "https://github.com/narc0tiq/YARM/releases"
+  }, {
+    "name": "SmartTrains",
+    "version": "0.3.81",
+    "url": "https://forums.factorio.com/viewtopic.php?f=97&t=14432"
+  }],
+  "pvp_mods": [{
+    "name": "FLSW Factions",
+    "version": "0.3.0",
+    "url": "https://github.com/flsw-factorio/flsw_factions/releases"
+  }, {
+    "name": "FLSW Auth",
+    "version": "0.1.1",
+    "url": "https://github.com/flsw-factorio/flsw_auth/releases"
+  }, {
+    "name": "Diplomacy (FLSW Fork)",
+    "version": "0.12.3",
+    "url": "https://github.com/flsw-factorio/Diplomacy/releases"
+  }]
+}
