@@ -397,6 +397,7 @@ img {
   padding-left: 10px;
 }
 #MODAL p {
+  text-align: center;
   color: #333;
   padding-bottom: 5px;
 }
@@ -489,7 +490,7 @@ for each modal you add just copy*/
   background-color: transparent;
   height: auto;
 }
-#modded {
+#pve {
   position: fixed;
   color: #fff;
   width: auto;
@@ -565,6 +566,21 @@ footer {
 
 /* start media 360 */
 @media screen and ( max-width: 360px) {
+  #MODAL h2 {
+    font-size: 22px;
+  }
+  #MODAL h3 {
+    font-size: 18px;
+  }
+  #MODAL p {
+    font-size: 14px;
+  }
+  #MODAL .table {
+    font-size: 12px;
+  }
+  #MODAL .table {
+    font-size: 12px;
+  }
   .servers {
     padding-bottom: 40px;
   }
