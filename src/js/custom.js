@@ -78,50 +78,37 @@ $(function() {
         $('#user_ip').text(response.ip);
     }, "jsonp");
 
- //    $('#get-data').click(function () {
- //    var lipvp = $('#show-data-pvp');
- //    var lipve = $('#show-data-pve');
- //
- //      $.getJSON('modlist.json', function (data) {
- //        console.log(data);
- // 
- //        var pvp_mods = data.pvp_mods.map(function (mod) {
- //          return mod.name + ' : ' + mod.version + ' : ' + mod.url;
- //        });
- //
- //        var pve_mods = data.pve_mods.map(function (mod) {
- //          return mod.name + ' : ' + mod.version + ' : ' + mod.url;
- //        });
- //
- //        lipvp.empty();
- //        lipve.empty();
- //
- //        if (pvp_mods.length) {
- //          var content = '<li>' + pvp_mods.join('</li><li>') + '</li>';
- //          var list = $('<ul />').html(content);
- //          lipvp.append(list);
- //        }
- //        if (pve_mods.length) {
- //          var content = '<li>' + pve_mods.join('</li><li>') + '</li>';
- //          var list = $('<ul />').html(content);
- //          lipve.append(list);
- //        }
- //      });
- //    lipvp.text('Loading the JSON file.');
- //    lipve.text('Loading the JSON file.');
- //    });
- //    $('form').submit(function() {
- //    $.ajax({
- //       type: 'POST',
- //       dataType: 'json',
- //       url: 'story.json',
- //       data: $(this).serialize(),
- //       success: function(data) {
- //           alert(data.message);
- //       },
- //       failure: function (data) {
- //           alert('Please try again');
- //       }
- //    });
- // });
+    $('#pvp-modal').click(function () {
+    var lipvp = $('#table-pvp');
+
+      $.getJSON('modlist.json', function (data) {
+        var content_pvp = data.pvp_mods.map(function (mod) {
+          return '<tr>' +'<th>' + mod.name + '</th>' +  '<th>' + mod.version + '</th>' + '<th>' + '<a href="' + mod.url +' target="_blank"><i class="fa fa-download"></i></a>' + '</th>'+ '</tr>';
+        });
+
+        lipvp.empty();
+
+        if (content_pvp.length) {
+          // var list = $('<tr />').html(content_pvp);
+          lipvp.append(content_pvp);
+        }
+      });
+  });
+  $('#pve-modal').click(function () {
+  var lipve = $('#table-pve');
+
+    $.getJSON('modlist.json', function (data) {
+
+      var content_pve = data.pve_mods.map(function (mod) {
+        return '<tr>' +'<th>' + mod.name + '</th>' +  '<th>' + mod.version + '</th>' + '<th>' + '<a href="' + mod.url +' target="_blank"><i class="fa fa-download"></i></a>' + '</th>'+ '</tr>';
+      });
+
+      lipve.empty();
+
+      if (content_pve.length) {
+        // var list = $('<tr />').html(content_pve);
+        lipve.append(content_pve);
+      }
+    });
+});
 });
