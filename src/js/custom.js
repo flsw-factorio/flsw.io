@@ -13,6 +13,7 @@ $(window).load(function() {
 });
 
 var global_user = null;
+var global_ip = null;
 
 $(function() {
   new WOW().init();
@@ -50,7 +51,6 @@ $(function() {
       $('#login').modal('hide');
       global_user = data;
       global_user.auth = authfield;
-      $('#user_ip').html("69.69.69.69");
     });
   });
   
@@ -82,7 +82,24 @@ $(function() {
   });
 
   $('#whitelist').click(function() {
-    console.log("Whitelisting " + $('#user_ip').text())
+    console.log("Whitelisting " + $('#user_ip').text());
+    console.log(global_user);
+
+    var data = { username: global_user.username, ip: $('#user_ip').text() };
+    $.ajax({
+        type: "POST",
+        url: "/api/whitelist",
+        data: data,
+        xhrFields: {
+          withCredentials: true
+        },
+        headers: {
+          "Authorization": 'Basic ' + global_user.auth
+        }
+      })
+      .done(function(data) {
+        //$('#register-form').html("Great! Now you can login and submit your IP to the whitelist!");
+      });
   });
 
   $.get("http://ipinfo.io", function(response) {
