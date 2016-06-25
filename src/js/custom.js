@@ -1,15 +1,10 @@
 // preloader
 $(window).load(function() {
   $('.preloader').fadeOut(1000); // set duration in brackets
-  $("#import_nav").load("load/nav.html");
-  $("#import_servers").load("load/servers.html");
-  $("#import_modal_login").load("load/modal/login.html");
-  $("#import_modal_myaccount").load("load/modal/myaccount.html");
-  $("#import_modal_pvp").load("load/modal/pvp.html");
-  $("#import_modal_pve").load("load/modal/pve.html");
-  $("#import_register").load("load/register.html");
-  $("#import_footer").load("load/footer.html");
-  $("#import_donate_button").load("load/donate_button.html");
+  $('.include').each(function() {
+    var path = $(this).attr('id');
+    $(this).load(path);
+  });
 });
 
 var global_user = null;
@@ -53,7 +48,7 @@ $(function() {
       global_user.auth = authfield;
     });
   });
-  
+
   $('#register-form').submit(function(event) {
     event.preventDefault();
     var $inputs = $('#register-form :input');
