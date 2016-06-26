@@ -3,13 +3,13 @@
 .preloader {
   position: fixed;
   top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 99999;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ z-index: 99999;
+ display: -webkit-flex;
+ display: -ms-flexbox;
+ display: flex;
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;
@@ -22,7 +22,7 @@
 }
 
 .sk-spinner-rotating-gear.sk-spinner {
-  color: var(--orange);
+  color: $orange;
   background-color: transparent;
   margin: 0 auto;
   -webkit-animation: sk-rotateGear 1.2s infinite ease-in-out;

@@ -1,29 +1,67 @@
-/**
- *  Welcome to your gulpfile!
- *  The gulp tasks are splitted in several files in the gulp directory
- *  because putting all here was really too long
- */
+// Requerements
+var gulp        = require('gulp');
+var browserSync = require('browser-sync').create();
+var sass        = require('gulp-sass');
+var cleanCSS    = require('gulp-clean-css');
+var htmlmin     = require('gulp-htmlmin');
+var uglify      = require('gulp-uglify');
+var imagemin    = require('gulp-imagemin');
+var concat      = require('gulp-concat');
 
-'use strict';
 
-var gulp = require('gulp');
-var wrench = require('wrench');
-
-/**
- *  This will load all js or coffee files in the gulp directory
- *  in order to load all gulp tasks
- */
-wrench.readdirSyncRecursive('./gulp').filter(function(file) {
-  return (/\.(js|coffee)$/i).test(file);
-}).map(function(file) {
-  require('./gulp/' + file);
+// Static Server
+gulp.task('serve',['watch'], function() {
+    browserSync.init({
+        server: "./dist/"
+    });
 });
 
-
-/**
- *  Default task clean temporaries directories and launch the
- *  main optimization build task
- */
-gulp.task('default', ['clean'], function () {
-  gulp.start('build');
+//Watch files for changes and execute the build for that task
+gulp.task('watch', function () {
+    gulp.watch('src/js/**/*.js', ['js']).on('change', browserSync.reload);
+    gulp.watch("src/css/*.*css", ['sass']);
+    gulp.watch("src/**/*.html", ['html']).on('change', browserSync.reload);
+    gulp.watch("src/images/*", ['img']).on('change', browserSync.reload);
 });
+
+//Compress images
+gulp.task('img', function () {
+    return gulp.src('src/images/*')
+        .pipe(imagemin())
+		    .pipe(gulp.dest('dist/images'))
+});
+
+// Compile html
+gulp.task('html', function () {
+    return gulp.src('src/**/*.html')
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest('dist/'));
+});
+// Compile js
+gulp.task('js', function () {
+   return gulp.src(['src/js/**/*.js', '!src/js/**/*.min.js'])
+       .pipe(uglify())
+       .pipe(gulp.dest('dist/js/'));
+});
+
+//compiles all .min.js files to app.js
+gulp.task('jsmin', function () {
+   return gulp.src(['src/js/**/*.min.js'])
+       .pipe(uglify())
+       .pipe(gulp.dest('dist/js/'));
+});
+
+// Compile sass into CSS & auto-inject into browsers
+gulp.task('sass', function() {
+   return gulp.src("src/css/*.scss")
+       .pipe(sass())
+       .pipe(cleanCSS({compatibility: 'ie8'}))
+       .pipe(gulp.dest("dist/css/"))
+       .pipe(browserSync.stream());
+});
+
+//Task that compiles everything into one package for deployment
+gulp.task('build', ['img', 'html', 'js', 'sass', 'jsmin']);
+
+//Task that first builds and then redirects to serve
+gulp.task('default', ['serve']);
