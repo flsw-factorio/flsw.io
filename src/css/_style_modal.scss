@@ -1,0 +1,173 @@
+/* modal stuff */
+
+#MODAL {
+  float: none;
+  margin: 0 auto;
+
+  h2, h3 {
+    text-align: center;
+    color: #333;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+
+  p {
+    text-align: center;
+    color: #333;
+    padding-bottom: 5px;
+  }
+
+  span {
+    color: $orange;
+    padding-bottom: 10px;
+  }
+
+  a {
+    color: $orange;
+  }
+
+  button {
+    width: 99%;
+
+    /* bugged needs to be 99% */
+    border-radius: 0px;
+    font-weight: bold;
+    background: $orange;
+    border-color: $orange;
+    padding: 10px 40px 10px 40px;
+  }
+
+  .bg {
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-bottom: 15px;
+    background-color: #fff;
+  }
+
+  .padding {
+    padding: 5px;
+  }
+
+  i {
+    text-align: center;
+    color: $orange;
+    padding-bottom: 10px;
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    display: block;
+    list-style: decimal;
+    padding: 15px;
+  }
+
+  .form-form {
+    padding: 20px;
+  }
+
+  input {
+    height: 40px;
+    width: 100%;
+    color: #333;
+    margin-bottom: 15px;
+  }
+
+  button[type="submit"] {
+    background: $orange;
+    color: #fff;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+
+  input[type="checkbox"] {
+    height: 15px;
+    float: left;
+  }
+
+  .table {
+    text-align: center;
+    color: #333;
+  }
+
+  th {
+    text-align: center;
+  }
+
+  li {
+    padding-left: -10px;
+    float: left;
+    text-align: left;
+    color: #333;
+  }
+}
+
+/* modal form style*/
+
+/* modal table style*/
+
+/*           modals
+for each modal you add just copy*/
+
+#login {
+  position: fixed;
+  color: #fff;
+  width: auto;
+  background-color: transparent;
+  height: auto;
+}
+
+#myacc {
+  position: fixed;
+  color: #333;
+  width: auto;
+  background-color: transparent;
+  height: auto;
+}
+
+/* end modal stuff*/
+
+/* start media 991 */
+@media screen and (max-width: 991px) {
+  #MODAL .bg {
+    margin-top: 15px;
+    margin-left: 15px;
+    padding-bottom: 15px;
+    padding-top: 3px;
+    background-color: #fff;
+  }
+}
+
+/* end media 991 */
+
+/* start media 767 */
+@media screen and (max-width: 767px) {}
+
+/* end media 767 */
+
+/* start media 360 */
+@media screen and (max-width: 360px) {
+  #MODAL {
+    h2 {
+      font-size: 22px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .table {
+      font-size: 12px;
+      font-size: 12px;
+    }
+  }
+}
+
+/* end media 360 */
