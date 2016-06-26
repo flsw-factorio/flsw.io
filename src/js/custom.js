@@ -100,32 +100,4 @@ $(function() {
   $.get("http://ipinfo.io", function(response) {
     $('#user_ip').text(response.ip);
   }, "jsonp");
-
-  $('#pvp-modal').unbind().click(function() {
-    $("html, body").animate({scrollTop: 0}, 0);
-    $('html, body').animate({scrollTop: $('#servers').position().top}, 1);
-    var lipvp = $('#table-pvp');
-    var pvp_modal = $('#pvp');
-    $(pvp_modal).modal('show');
-    $.getJSON('modlist.json', function(data) {
-      var content_pvp = data.pvp_mods.map(function(mod) {
-        return '<tr>' + '<th>' + mod.name + '</th>' + '<th>' + mod.version + '</th>' + '<th>' + '<a href="' + mod.url + ' target="_blank"><i class="fa fa-download"></i></a>' + '</th>' + '</tr>';
-      });
-      lipvp.empty();
-      if (content_pvp.length) {lipvp.append(content_pvp);}
-    });
-  });
-
-  $('#pve-modal').unbind().click(function() {
-    $("html, body").animate({scrollTop: 0}, 0);
-    $('html, body').animate({scrollTop: $('#servers').position().top}, 1);
-    var lipve = $('#table-pve');
-    var pve_modal = $('#pve');
-    $(pve_modal).modal('show');
-    $.getJSON('modlist.json', function(data) {
-      var content_pve = data.pve_mods.map(function(mod) {return '<tr>' + '<th>' + mod.name + '</th>' + '<th>' + mod.version + '</th>' + '<th>' + '<a href="' + mod.url + ' target="_blank"><i class="fa fa-download"></i></a>' + '</th>' + '</tr>';});
-      lipve.empty();
-      if (content_pve.length) {lipve.append(content_pve);}
-    });
-  });
 });

@@ -1,51 +1,81 @@
 <section id="servers">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 wow bounceIn">
+			<div class="col-md-12">
 				<h2 class="text-uppercase">Our Servers</h2>
 			</div>
 			<!-- start pvp -->
-			<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
-				<div class="servers text-uppercase">
-					<div class="servers-title" id="server-pvp">
-						<h4>PVP FACTORIO</h4>
-						<p>Players: 0/50</p>
-						<small class="text-lowercase">COME TEST</small>
+			<div id="SERVER1">
+				<div class="col-md-4">
+					<div class="servers text-uppercase">
+						<div class="servers-title" id="headerSERVER1">
+							<h4>PVP FACTORIO</h4>
+							<p>Players: 0/50</p>
+							<small class="text-lowercase">COME TEST</small>
+						</div>
+						<ul>
+							<li>Faction</li>
+							<li>player vs player</li>
+							<li>-----------</li>
+							<li>-----------</li>
+						</ul>
+						<button id="showSERVER1" class="btn btn-primary text-uppercase">More info</button>
 					</div>
-					<ul>
-						<li>Faction</li>
-						<li>player vs player</li>
-						<li>-----------</li>
-						<li>-----------</li>
-					</ul>
-					<button id="pvp-modal" class="btn btn-primary text-uppercase">More info</button>
+				</div>
+				<div class="col-md-8 servers moreinfoSERVER1">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>MOD</th>
+								<th>VERSION</th>
+								<th>DOWNLOAD</th>
+							</tr>
+						</thead>
+						<tbody id="tableSERVER1">
+						</tbody>
+					</table>
 				</div>
 			</div>
 			<!-- end pvp -->
 
 			<!-- start pve -->
-			<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
-				<div class="servers active text-uppercase">
-					<div class="servers-title" id="server-mod">
-						<h4>PVE MODDED FACTORIO</h4>
-						<p>Players: 0/50</p>
-						<small class="text-lowercase">Last restart: 10-3-2016</small>
+			<div id="SERVER2">
+				<div class="col-md-4">
+					<div class="servers text-uppercase">
+						<div class="servers-title" id="headerSERVER2">
+							<h4>PVE MODDED FACTORIO</h4>
+							<p>Players: 0/50</p>
+							<small class="text-lowercase">Last restart: 10-3-2016</small>
+						</div>
+						<ul>
+							<li>RSO</li>
+							<li>Easy PvE</li>
+							<li>YARM</li>
+							<li>Smart Trains</li>
+						</ul>
+						<div id="showSERVER2" class="btn btn-primary text-uppercase">More info</div>
 					</div>
-					<ul>
-						<li>RSO</li>
-						<li>Easy PvE</li>
-						<li>YARM</li>
-						<li>Smart Trains</li>
-					</ul>
-					<button id="pve-modal" class="btn btn-primary text-uppercase">More info</button>
+				</div>
+				<div class="col-md-8 servers moreinfoSERVER2">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>MOD</th>
+								<th>VERSION</th>
+								<th>DOWNLOAD</th>
+							</tr>
+						</thead>
+						<tbody id="tableSERVER2">
+						</tbody>
+					</table>
 				</div>
 			</div>
 			<!-- end pve -->
 
 			<!-- start ts3 -->
-			<div class="col-md-4 wow fadeIn" data-wow-delay="0.6s">
+			<div id="SERVER3" class="col-md-4" >
 				<div class="servers text-uppercase">
-					<div class="servers-title" id="server-ts">
+					<div class="servers-title" id="headerSERVER3">
 						<h4>Teamspeak 3</h4>
 						<p>Users: 10/50</p>
 						<small class="text-lowercase">monthly</small>
@@ -65,6 +95,7 @@
 		</div>
 	</div>
 </section>
+<script src="js/servers.js"></script>
 
 
 <!-- data-toggle="modal" data-target="#pvp" -->

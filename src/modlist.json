@@ -1,5 +1,5 @@
 {
-  "pve_mods": [{
+  "SERVER2": [{
     "name": "RSO",
     "version": "1.5.1",
     "url": "https://forums.factorio.com/viewtopic.php?f=79&t=13783"
@@ -16,7 +16,7 @@
     "version": "0.3.81",
     "url": "https://forums.factorio.com/viewtopic.php?f=97&t=14432"
   }],
-  "pvp_mods": [{
+  "SERVER1": [{
     "name": "FLSW Factions",
     "version": "0.3.0",
     "url": "https://github.com/flsw-factorio/flsw_factions/releases"
