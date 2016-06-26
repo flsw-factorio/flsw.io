@@ -1,15 +1,15 @@
+@import 'color';
 /* start preloader */
-
 .preloader {
   position: fixed;
   top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- z-index: 99999;
- display: -webkit-flex;
- display: -ms-flexbox;
- display: flex;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-flex-flow: row nowrap;
   -ms-flex-flow: row nowrap;
   flex-flow: row nowrap;

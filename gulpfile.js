@@ -60,8 +60,13 @@ gulp.task('sass', function() {
        .pipe(browserSync.stream());
 });
 
+gulp.task('fonts', function () {
+    return gulp.src('src/fonts/*')
+        .pipe(gulp.dest('dist/fonts/'));
+});
+
 //Task that compiles everything into one package for deployment
-gulp.task('build', ['img', 'html', 'js', 'sass', 'jsmin']);
+gulp.task('build', ['img', 'html', 'js', 'sass', 'jsmin', 'fonts']);
 
 //Task that first builds and then redirects to serve
 gulp.task('default', ['serve']);
