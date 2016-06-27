@@ -2,12 +2,25 @@
 #spacer {
   height: 600px;
 }
+html {
+ overflow-y: -moz-scrollbars-vertical;
+ overflow-y: scroll;
+ height: 100%;
+ box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
 body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
-  position: relative;
   width: 100%;
-  height: 100%;
   overflow-x: hidden;
   background: url('../images/home-bg.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -140,75 +153,57 @@ img {
 }
 /*end donate button*/
 /* start servers */
-$height: 75px;
+$square: 75px;
 #servers {
   background: transparent;
-  text-align: center;
-  padding: 205px 10px 205px 10px;
+  background-size: cover;
   color: #fff;
+  margin-bottom: 25px;
   h2 {
-    padding-bottom: 60px;
+    padding: 205px 0 75px 0;
   }
   h4 {
-    margin: 5px 0 5px 0;
+    white-space: nowrap;
   }
-  .height {
-    height: $height;
-  }
-  .vcenter {
-    display: flex;
-    align-items: center;
-  }
-  .server-more-info {
-    background: $gray;
-    display: block;
-    height: auto !important;
-  }
-  .server-item {
-    margin: 20px 0 0 20px;
+  i, a {
+    color: $orange;
   }
   .servers {
-    background: $gray;
-    display: block;
-    height: $height;
-    .servers-title {
-      height: $height;
-      width: $height;
-      color: #fff;
-      font-weight: bold;
-      padding: 10px;
-      p {
-        font-size: 20px;
-      }
-    }
-    ul {
-      padding: 0;
-      margin: 0;
-      li {
-        list-style: none;
-        padding: 10px;
-      }
-    }
+    background-color: $gray;
+    display: flex;
+  }
+  .servers-title {
+    height: $square;
+    width: $square;
+  }
+  .servers-dropdown {
+    float: right;
+    height: $square;
+    width: $square;
+  }
+  .servers-item {
+    margin-top: 25px;
+  }
+  .center {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .bg {
+    display: flex;
+    background-color: $gray;
+    padding: 5px 10px 5px 10px;
   }
   a {
-    text-decoration: none;
+    height: auto;
     color: $orange;
-  }
-  i {
-    color: $orange;
-    padding-bottom: 5px;
-  }
-  .servers .btn {
-    background: transparent;
-    border: 1px solid $orange;
-    border-radius: 0;
-    color: $orange;
+    border-radius: 0px;
     font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 30px;
-    transition: all 0.3s ease;
+    background: transparent;
+    border-color: $orange;
+    padding: 10px 10px 10px 10px;
     &:hover {
-      background: $orange;
+      background-color: $orange;
       color: #fff;
     }
   }
@@ -231,7 +226,7 @@ $height: 75px;
     background-color: $gray;
     padding: 10px;
     height: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
   }
   .col-height {
     display: table-cell;
@@ -271,11 +266,18 @@ $height: 75px;
 }
 /* end register */
 /* start footer */
-footer {
+$footerheight: 75px;
+footer > .row{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
   background: $gray;
-  font-weight: 400;
-  text-align: center;
-  padding: 10px;
+  p {
+    font-weight: 400;
+    text-align: center;
+  }
 }
 /* end footer */
 /* start media 991 */

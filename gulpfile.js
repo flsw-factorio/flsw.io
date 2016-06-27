@@ -7,7 +7,7 @@ var htmlmin     = require('gulp-htmlmin');
 var uglify      = require('gulp-uglify');
 var imagemin    = require('gulp-imagemin');
 var concat      = require('gulp-concat');
-
+var plumber     = require('gulp-plumber');
 
 // Static Server
 gulp.task('serve',['watch'], function() {
@@ -40,6 +40,7 @@ gulp.task('html', function () {
 // Compile js
 gulp.task('js', function () {
    return gulp.src(['src/js/**/*.js', '!src/js/**/*.min.js'])
+       .pipe(plumber())
        .pipe(uglify())
        .pipe(gulp.dest('dist/js/'));
 });
@@ -47,17 +48,19 @@ gulp.task('js', function () {
 //compiles all .min.js files to app.js
 gulp.task('jsmin', function () {
    return gulp.src(['src/js/**/*.min.js'])
-       .pipe(uglify())
-       .pipe(gulp.dest('dist/js/'));
+        .pipe(plumber())
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js/'));
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
    return gulp.src("src/css/*.scss")
-       .pipe(sass())
-       .pipe(cleanCSS({compatibility: 'ie8'}))
-       .pipe(gulp.dest("dist/css/"))
-       .pipe(browserSync.stream());
+        .pipe(plumber())
+        .pipe(sass())
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(gulp.dest("dist/css/"))
+        .pipe(browserSync.stream());
 });
 
 gulp.task('fonts', function () {
