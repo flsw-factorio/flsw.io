@@ -41,29 +41,47 @@ gulp.task('html', function () {
 // Compile js
 gulp.task('js', function () {
    return gulp.src(['src/js/**/*.js', '!src/js/**/*.min.js'])
-        .pipe(plumber())
+        .pipe(plumber({
+          errorHandler: function (err) {
+            console.log(err);
+            this.emit('end');
+          }
+        }))
         .pipe(uglify())
+        .pipe(plumber.stop())
         .pipe(gulp.dest('dist/js/'));
 });
 
 //compiles all .min.js files to app.js
 gulp.task('jsmin', function () {
    return gulp.src(['src/js/**/*.min.js'])
-        .pipe(plumber())
+        .pipe(plumber({
+          errorHandler: function (err) {
+            console.log(err);
+            this.emit('end');
+          }
+        }))
         .pipe(uglify())
+        .pipe(plumber.stop())
         .pipe(gulp.dest('dist/js/'));
 });
 
 // Compile sass into CSS & auto-inject into browsers
 gulp.task('sass', function() {
    return gulp.src("src/css/*.scss")
-        .pipe(plumber())
+        .pipe(plumber({
+          errorHandler: function (err) {
+            console.log(err);
+            this.emit('end');
+          }
+        }))
         .pipe(sass())
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(autoprefixer({
     			browsers: ['last 2 versions'],
     			cascade: false
     		}))
+        .pipe(plumber.stop())
         .pipe(gulp.dest("dist/css/"))
         .pipe(browserSync.stream());
 });
