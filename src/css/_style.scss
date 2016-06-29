@@ -1,4 +1,4 @@
-@import 'color';
+@import 'var';
 #spacer {
   height: 600px;
 }
@@ -153,19 +153,27 @@ img {
 }
 /*end donate button*/
 /* start servers */
-$square: 75px;
 #servers {
   background: transparent;
   background-size: cover;
   color: #fff;
   margin-bottom: 25px;
+  display: flex;
   h2 {
     padding: 205px 0 75px 0;
   }
   h4 {
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap
   }
-  i, a {
+  @media screen and (max-width: 620px) {
+    h4 {
+      width: 50vw;
+    }
+  }
+  i {
     color: $orange;
   }
   .servers {
@@ -173,16 +181,32 @@ $square: 75px;
     display: flex;
   }
   .servers-title {
-    height: $square;
-    width: $square;
+    height: $servers-height;
+    width: $servers-height;
+  }
+  .servers-info {
+      padding-left: 10px;
   }
   .servers-dropdown {
-    float: right;
-    height: $square;
-    width: $square;
+    margin-left: auto;
+    height: $servers-height;
+    width: $servers-height;
   }
   .servers-item {
     margin-top: 25px;
+  }
+  .servers-playerlist {
+    li:before {
+      content: " | ";
+      color: #fff;
+    }
+    li:first-child:before {
+      content: none;
+    }
+    li {
+      color: lighten($online, 22%);
+      padding-left: 0;
+    }
   }
   .center {
     display:flex;
@@ -194,7 +218,8 @@ $square: 75px;
     background-color: $gray;
     padding: 5px 10px 5px 10px;
   }
-  a {
+  a[type='button'] {
+    margin-left: auto;
     height: auto;
     color: $orange;
     border-radius: 0px;
@@ -207,7 +232,12 @@ $square: 75px;
       color: #fff;
     }
   }
-  #SERVER1HEADER,
+  tbody > tr:hover {
+    background-color: darken($gray, 50%)
+  }
+  #SERVER1HEADER {
+    background-color: $offline;
+  }
   #SERVER2HEADER,
   #SERVER3HEADER {
     background-color: $online;
@@ -245,11 +275,22 @@ $square: 75px;
       margin-right: 10px;
     }
   }
+  @media screen and (max-width:432px){
+    .register-form {
+      width: 100%;
+    }
+    .register-title {
+      width: 100%;
+    }
+  }
   .register-form {
+    width: 50%;
     padding-top: 40px;
   }
+  .register-title {
+    width: 50%;
+  }
   .form-control {
-    border: none;
     border-radius: 0;
     box-shadow: none;
     margin-bottom: 20px;
@@ -257,10 +298,19 @@ $square: 75px;
   input {
     height: 50px;
     &[type="submit"] {
-      background: $orange;
-      color: #fff;
+      height: auto;
+      color: $orange;
+      border-radius: 0px;
       font-weight: bold;
-      transition: all 0.3s ease;
+      background: transparent;
+      border-width: 1px;
+      border-color: $orange;
+      // border-color: $orange;
+      padding: 10px 10px 10px 10px;
+      &:hover {
+        background-color: $orange;
+        color: #fff;
+      }
     }
   }
 }

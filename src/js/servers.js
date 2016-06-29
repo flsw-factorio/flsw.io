@@ -21,17 +21,18 @@ $(document).ready(function() {
   function toggleserver(server) {
     if (servers[server].active == true) {
       servers[server].active = false;
+      $("#" + servers[server].name + 'SHOW').toggleClass('fa fa-chevron-down');
+      $('#' + servers[server].name + 'INFO').slideToggle();
     } else {
       servers[server].active = true;
+      $("#" + servers[server].name + 'SHOW').toggleClass('fa fa-chevron-up');
+      $('#' + servers[server].name + 'INFO').slideToggle();
     }
-    $("#" + servers[server].name + 'SHOW > i').toggleClass('fa fa-chevron-down');
-    $("#" + servers[server].name + 'SHOW > i').toggleClass('fa fa-chevron-up');
-    $('#' + servers[server].name + 'INFO').slideToggle();
     for (i = 0; i < servers.length; i++) {
       if (servers[i].active == true && i != server) {
         servers[i].active = false;
-        $("#" + servers[i].name + 'SHOW > i').toggleClass('fa fa-chevron-down');
-        $("#" + servers[i].name + 'SHOW > i').toggleClass('fa fa-chevron-up');
+        $("#" + servers[i].name + 'SHOW').toggleClass('fa fa-chevron-down');
+        $("#" + servers[i].name + 'SHOW').toggleClass('fa fa-chevron-up');
         $('#' + servers[i].name + 'INFO').slideToggle();
       }
     }
