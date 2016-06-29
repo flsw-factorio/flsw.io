@@ -1,18 +1,19 @@
 // Requerements
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
-var sass        = require('gulp-sass');
-var cleanCSS    = require('gulp-clean-css');
-var htmlmin     = require('gulp-htmlmin');
-var uglify      = require('gulp-uglify');
-var imagemin    = require('gulp-imagemin');
-var concat      = require('gulp-concat');
-var plumber     = require('gulp-plumber');
+var gulp         = require('gulp');
+var browserSync  = require('browser-sync').create();
+var sass         = require('gulp-sass');
+var cleanCSS     = require('gulp-clean-css');
+var htmlmin      = require('gulp-htmlmin');
+var uglify       = require('gulp-uglify');
+var imagemin     = require('gulp-imagemin');
+var concat       = require('gulp-concat');
+var plumber      = require('gulp-plumber');
+var autoprefixer = require('gulp-autoprefixer');
 
 // Static Server
 gulp.task('serve',['watch'], function() {
     browserSync.init({
-        server: "./dist/"
+      server: "./dist/"
     });
 });
 
@@ -40,9 +41,9 @@ gulp.task('html', function () {
 // Compile js
 gulp.task('js', function () {
    return gulp.src(['src/js/**/*.js', '!src/js/**/*.min.js'])
-       .pipe(plumber())
-       .pipe(uglify())
-       .pipe(gulp.dest('dist/js/'));
+        .pipe(plumber())
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/js/'));
 });
 
 //compiles all .min.js files to app.js
@@ -59,6 +60,10 @@ gulp.task('sass', function() {
         .pipe(plumber())
         .pipe(sass())
         .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(autoprefixer({
+    			browsers: ['last 2 versions'],
+    			cascade: false
+    		}))
         .pipe(gulp.dest("dist/css/"))
         .pipe(browserSync.stream());
 });
@@ -72,4 +77,4 @@ gulp.task('fonts', function () {
 gulp.task('build', ['img', 'html', 'js', 'sass', 'jsmin', 'fonts']);
 
 //Task that first builds and then redirects to serve
-gulp.task('default', ['serve']);
+gulp.task('default', ['build','serve']);
