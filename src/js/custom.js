@@ -11,7 +11,6 @@ var global_user = null;
 var global_ip = null;
 
 $(function() {
-  new WOW().init();
   $('.templatemo-nav').singlePageNav({
     offset: 70
   });
